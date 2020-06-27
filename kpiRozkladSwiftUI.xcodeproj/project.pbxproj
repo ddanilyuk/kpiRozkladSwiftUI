@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F5F7CE524A76BC900FB1AC4 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5F7CE424A76BC900FB1AC4 /* SettingsView.swift */; };
+		5F5F7CE724A76C3600FB1AC4 /* CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5F7CE624A76C3600FB1AC4 /* CoreDataHelpers.swift */; };
+		5F8972A424A7A614006522E3 /* LessonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8972A324A7A614006522E3 /* LessonsView.swift */; };
+		5FA0367C24A76832006BD534 /* kpiRozklad.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5FA0367A24A76832006BD534 /* kpiRozklad.xcdatamodeld */; };
 		5FC5922A24A65A2200CBB631 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC5922924A65A2200CBB631 /* AppDelegate.swift */; };
 		5FC5922C24A65A2200CBB631 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC5922B24A65A2200CBB631 /* SceneDelegate.swift */; };
 		5FC5922F24A65A2200CBB631 /* kpiRozkladSwiftUI.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5FC5922D24A65A2200CBB631 /* kpiRozkladSwiftUI.xcdatamodeld */; };
@@ -50,6 +54,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5F5F7CE424A76BC900FB1AC4 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		5F5F7CE624A76C3600FB1AC4 /* CoreDataHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelpers.swift; sourceTree = "<group>"; };
+		5F8972A324A7A614006522E3 /* LessonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsView.swift; sourceTree = "<group>"; };
+		5FA0367B24A76832006BD534 /* Lesson.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Lesson.xcdatamodel; sourceTree = "<group>"; };
 		5FC5922624A65A2200CBB631 /* kpiRozkladSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kpiRozkladSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FC5922924A65A2200CBB631 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5FC5922B24A65A2200CBB631 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +114,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5F8972A524A7A649006522E3 /* Lessons */ = {
+			isa = PBXGroup;
+			children = (
+				5F8972A324A7A614006522E3 /* LessonsView.swift */,
+				5FC592BC24A7336C00CBB631 /* LessonsList.swift */,
+				5FC5929F24A65F5900CBB631 /* LessonRow.swift */,
+			);
+			path = Lessons;
+			sourceTree = "<group>";
+		};
+		5F8972A624A7A65F006522E3 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				5F5F7CE424A76BC900FB1AC4 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		5FC5921D24A65A2200CBB631 = {
 			isa = PBXGroup;
 			children = (
@@ -135,9 +161,10 @@
 				5FC592BA24A7332200CBB631 /* Helpers */,
 				5FC592BB24A7332900CBB631 /* Resources */,
 				5FC5923024A65A2200CBB631 /* ContentView.swift */,
-				5FC592BC24A7336C00CBB631 /* LessonsList.swift */,
-				5FC5929F24A65F5900CBB631 /* LessonRow.swift */,
+				5F8972A524A7A649006522E3 /* Lessons */,
+				5F8972A624A7A65F006522E3 /* Settings */,
 				5FC5923A24A65A2300CBB631 /* Info.plist */,
+				5FA0367A24A76832006BD534 /* kpiRozklad.xcdatamodeld */,
 				5FC5922D24A65A2200CBB631 /* kpiRozkladSwiftUI.xcdatamodeld */,
 				5FC5923424A65A2300CBB631 /* Preview Content */,
 			);
@@ -189,6 +216,7 @@
 		5FC592BA24A7332200CBB631 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				5F5F7CE624A76C3600FB1AC4 /* CoreDataHelpers.swift */,
 				5FC592B424A6600F00CBB631 /* UserData.swift */,
 				5FC592B624A68F2900CBB631 /* Server.swift */,
 			);
@@ -337,10 +365,13 @@
 			files = (
 				5FC592AC24A65FAE00CBB631 /* LessonType.swift in Sources */,
 				5FC5922A24A65A2200CBB631 /* AppDelegate.swift in Sources */,
+				5F8972A424A7A614006522E3 /* LessonsView.swift in Sources */,
 				5FC592A024A65F5900CBB631 /* LessonRow.swift in Sources */,
 				5FC592B524A6600F00CBB631 /* UserData.swift in Sources */,
 				5FC5922C24A65A2200CBB631 /* SceneDelegate.swift in Sources */,
+				5F5F7CE524A76BC900FB1AC4 /* SettingsView.swift in Sources */,
 				5FC592AD24A65FAE00CBB631 /* Meta.swift in Sources */,
+				5FA0367C24A76832006BD534 /* kpiRozklad.xcdatamodeld in Sources */,
 				5FC592AE24A65FAE00CBB631 /* Room.swift in Sources */,
 				5FC592B124A65FAE00CBB631 /* JSONNull.swift in Sources */,
 				5FC592B324A65FAE00CBB631 /* Group.swift in Sources */,
@@ -351,6 +382,7 @@
 				5FC592B924A695C600CBB631 /* String+Extensions.swift in Sources */,
 				5FC5922F24A65A2200CBB631 /* kpiRozkladSwiftUI.xcdatamodeld in Sources */,
 				5FC592AF24A65FAE00CBB631 /* DayName.swift in Sources */,
+				5F5F7CE724A76C3600FB1AC4 /* CoreDataHelpers.swift in Sources */,
 				5FC592B724A68F2900CBB631 /* Server.swift in Sources */,
 				5FC592B024A65FAE00CBB631 /* Teacher.swift in Sources */,
 			);
@@ -683,6 +715,16 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
+		5FA0367A24A76832006BD534 /* kpiRozklad.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5FA0367B24A76832006BD534 /* Lesson.xcdatamodel */,
+			);
+			currentVersion = 5FA0367B24A76832006BD534 /* Lesson.xcdatamodel */;
+			path = kpiRozklad.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
 		5FC5922D24A65A2200CBB631 /* kpiRozkladSwiftUI.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
