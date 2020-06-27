@@ -8,40 +8,39 @@
 import SwiftUI
 
 struct LessonsList: View {
-    
+    var week: Int
     var lessons: [Lesson]
     
     var normalLessons: [Int: [DayName: [Lesson]]] = [:]
     
-    init(lessons: [Lesson]) {
+    init(lessons: [Lesson], week: Int) {
         self.lessons = lessons
-        
+        self.week = week
         normalLessons = makeLessonsShedule(lessons: lessons)
         print(normalLessons.keys)
 
     }
     
     var body: some View {
-//        Text("\(normalLessons.keys)")
         List {
-//            ForEach() { weekNumber in
-//
-//            }
-            if let week1 = normalLessons[1], let _ = normalLessons[2] {
+            if let week1 = normalLessons[week]{
                 ForEach(week1.keys.sorted(), id: \.self) { key in
                     let lessonsForToday = week1[key]!
                     Section(header: Text(key.rawValue).foregroundColor(.black)) {
                         ForEach(lessonsForToday) { lesson in
                             LessonRow(lesson: lesson)
+                                .padding(.leading, -10)
                         }
                     }
                 }
                 
-            } else {
-                
             }
             
         }
+        .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+        .listStyle(InsetGroupedListStyle())
+
+        
     }
     
     func makeLessonsShedule(lessons: [Lesson]) -> [Int: [DayName: [Lesson]]] {
@@ -60,21 +59,16 @@ struct LessonsList: View {
                 }
             }
             
-//            var result: [(day: DayName, lessons: [Lesson])] = []
-            
-            var result2: [DayName : [Lesson]] = [:]
+            var result: [DayName : [Lesson]] = [:]
             let keys = sortedDictionary.keys.sorted()
             keys.forEach { dayName in
                 if let lessons: [Lesson] = sortedDictionary[dayName] {
-//                    result.append((day: dayName, lessons: lessons))
-                    result2[dayName] = lessons
-                    
+                    result[dayName] = lessons
                 } else {
-//                    result.append((day: dayName, lessons: []))
-                    result2[dayName] = []
+                    result[dayName] = []
                 }
             }
-            ret[weekNumber] = result2
+            ret[weekNumber] = result
         }
         
         return ret
@@ -84,6 +78,6 @@ struct LessonsList: View {
 
 struct LessonsList_Previews: PreviewProvider {
     static var previews: some View {
-        LessonsList(lessons: [lessonToTest, lessonToTest])
+        LessonsList(lessons: [lessonToTest, lessonToTest], week: 1)
     }
 }

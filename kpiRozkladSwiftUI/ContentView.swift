@@ -15,27 +15,67 @@ var lessons: [Lesson] = Array(repeating: lessonToTest, count: 1)
 
 struct ContentView: View {
     
-    init() {
-        UITableView.appearance().backgroundColor = .secondarySystemFill
-    }
-    
     @State var lessons: [Lesson] = []
+    @State var week: Int = 1
+    
+    init() {
+        UISegmentedControl.appearance().selectedSegmentTintColor = .systemBlue
+            UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
+            UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.systemBlue], for: .normal)
+        UITableView.appearance().backgroundColor = .secondarySystemBackground
+    }
     
     var body: some View {
 
-        NavigationView {
+        TabView {
+            NavigationView {
 
-            LessonsList(lessons: lessons)
-                .listStyle(InsetGroupedListStyle())
-                .navigationBarTitle(Text("ІВ-82"))
-                .onAppear {
-                    getGroups(complition: { lessons in
-                        self.lessons = lessons
-                    })
+                LessonsList(lessons: lessons, week: week)
+                    
+                    .navigationBarTitle(Text("ІВ-82"))
+                    
+                    
+                    .navigationBarItems(trailing:
+                        Picker("", selection: $week) {
+                            Text("1").tag(1)
+                            Text("2").tag(2)
+                        }
+                        .pickerStyle(SegmentedPickerStyle())
+                        .frame(width: 120, height: .none, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    )
+                    
+                    .onAppear {
+                        getGroups(complition: { lessons in
+                            self.lessons = lessons
+                        })
+                    }
+            }
+            
+            .tabItem {
+                Image(systemName: "list.bullet")
+                Text("Розклад")
+            }
+            
+            NavigationView {
+                ZStack {
+                    Color.init(UIColor.secondarySystemBackground).edgesIgnoringSafeArea(.all)
+                    
+                    Text("Settings")
+                    
                 }
-
+                
+                
+                    .navigationBarTitle(Text("Налаштування"))
+            }
+            .tabItem {
+                Image(systemName: "gear")
+                Text("Налаштування")
+            }
+            
+            
+            
         }
-
+        
     }
 }
 
