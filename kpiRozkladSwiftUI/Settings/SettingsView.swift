@@ -19,13 +19,13 @@ struct SettingsView: View {
                 
                 VStack(alignment: .center) {
                     Spacer()
-                    Text("Settings2")
+                    Text("Settings")
                     Spacer()
                     Button("Reload data") {
                         deleteAllFromCoreData(managedContext: managedObjectContext)
                         
                         getGroups() { lessons in
-                            updateCoreData(lessons: lessons, managedContext: managedObjectContext, complition: {})
+                            updateCoreData(lessons: lessons, managedContext: managedObjectContext)
                         }
                     }
                     Spacer()

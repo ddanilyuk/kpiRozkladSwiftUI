@@ -35,7 +35,7 @@ struct LessonsList: View {
                 if let currentWeek = normalLessons[week] {
                     ForEach(currentWeek.keys.sorted(), id: \.self) { key in
                         let lessonsForToday = currentWeek[key]!
-                        Section(header: Text(key.rawValue).foregroundColor(.black)) {
+                        Section(header: Text(key.rawValue).foregroundColor(Color(.label))) {
                             ForEach(lessonsForToday) { lesson in
                                 LessonRow(lesson: lesson)
                                     .padding(.leading, -10)
@@ -59,6 +59,11 @@ struct LessonsList: View {
             }
             normalLessons = makeLessonsShedule(lessons: lessonsFromCoreData)
         }
+//        .onAppear {
+//            getGroups(complition: { lessons in
+//                updateCoreData(lessons: lessons, managedContext: managedObjectContext)
+//            })
+//        }
         
     }
     

@@ -9,7 +9,7 @@
 import UIKit
 
 
-struct Room: Codable {
+struct Room: Codable, Hashable {
     let roomID, roomName, roomLatitude, roomLongitude: String
 
     enum CodingKeys: String, CodingKey {

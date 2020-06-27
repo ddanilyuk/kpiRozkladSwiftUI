@@ -9,7 +9,7 @@
 import UIKit
 
 
-struct Meta: Codable {
+struct Meta: Codable, Hashable {
     let totalCount: String?
     let offset, limit: Int?
 

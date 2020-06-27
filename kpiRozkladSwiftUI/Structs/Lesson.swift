@@ -24,7 +24,7 @@ struct WelcomeLessons: Codable {
 
 
 // MARK: - Lesson
-struct Lesson: Codable, Identifiable {
+struct Lesson: Codable, Hashable, Identifiable {
 //    var id: ObjectIdentifier
     
     let id: String
@@ -56,6 +56,11 @@ struct Lesson: Codable, Identifiable {
         case timeEnd = "time_end"
         case rate, teachers, rooms, groups
     }
+    
+    
+    static let defaultLesson = Lesson(id: "1", dayNumber: "1", groupID: "123", dayName: DayName.mounday, lessonName: "SwiftUI tutorials", lessonFullName: "SwiftUI tutorials apple", lessonNumber: "1", lessonRoom: "1", lessonType: .лаб, teacherName: "TeacherName", lessonWeek: "1", timeStart: "08:30", timeEnd: "10:25", rate: "1", teachers: [], rooms: [], groups: [])
+
+    static let defaultArratOfLesson: [Lesson] = Array(repeating: defaultLesson, count: 3)
 }
 
 

@@ -19,7 +19,7 @@ struct WelcomeTeachers: Codable {
 }
 
 // MARK: - Datum
-struct Teacher: Codable {
+struct Teacher: Codable, Hashable {
     let teacherID, teacherName, teacherFullName, teacherShortName: String
     let teacherURL: String
     let teacherRating: String

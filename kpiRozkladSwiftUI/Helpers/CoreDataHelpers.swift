@@ -190,82 +190,76 @@ Function which save all data from server in to Core data
  - Parameter vc: Shedule VC to call `makeLessonsShedule()`
  - Parameter datum: array of  [Lesson] which received from server
 */
-func updateCoreData(lessons:  [Lesson], managedContext: NSManagedObjectContext, complition: @escaping () -> ()?) {
-    DispatchQueue.main.async {
-        /// Delete all
-        deleteAllFromCoreData(managedContext: managedContext)
+func updateCoreData(lessons:  [Lesson], managedContext: NSManagedObjectContext) {
+    /// Delete all
+    deleteAllFromCoreData(managedContext: managedContext)
 
-        for lesson in lessons {
-            let lessonData = LessonData(context: managedContext)
+    for lesson in lessons {
+        let lessonData = LessonData(context: managedContext)
 
-            lessonData.dayName = lesson.dayName.rawValue
-            lessonData.dayNumber = lesson.dayNumber
-            lessonData.groupID = lesson.groupID
-            lessonData.lessonFullName = lesson.lessonFullName
-            lessonData.lessonID = lesson.id
-            lessonData.lessonName = lesson.lessonName
-            lessonData.lessonNumber = lesson.lessonNumber
-            lessonData.lessonRoom = lesson.lessonRoom
-            lessonData.lessonType = lesson.lessonType.rawValue
-            lessonData.lessonWeek = lesson.lessonWeek
-            lessonData.rate = lesson.rate
-            lessonData.dayName = lesson.dayName.rawValue
-            lessonData.teacherName = lesson.teacherName
-            lessonData.timeEnd = lesson.timeEnd
-            lessonData.timeStart = lesson.timeStart
-            
-            
-            let roomData = RoomsData(context: managedContext)
-            
-            if lesson.rooms.count != 0 {
-                roomData.roomID = lesson.rooms[0].roomID
-                roomData.roomLatitude = lesson.rooms[0].roomLatitude
-                roomData.roomLongitude = lesson.rooms[0].roomLongitude
-                roomData.roomName = lesson.rooms[0].roomName
-            }
-            
-            
-            let teacherData = TeachersData(context: managedContext)
-
-            if lesson.teachers?.count != 0 {
-                teacherData.teacherFullName = lesson.teachers?[0].teacherFullName
-                teacherData.teacherID = lesson.teachers?[0].teacherID
-                teacherData.teacherName = lesson.teachers?[0].teacherName
-                teacherData.teacherRating = lesson.teachers?[0].teacherRating
-                teacherData.teacherShortName = lesson.teachers?[0].teacherShortName
-                teacherData.teacherURL = lesson.teachers?[0].teacherURL
-            }
-            
-            
-            var array: [GroupData] = []
-            
-            for group in lesson.groups ?? [] {
-                let groupData = GroupData(context: managedContext)
-                groupData.groupFullName = group.groupFullName
-                groupData.groupID = Int32(group.groupID)
-                groupData.groupOkr = group.groupOkr.rawValue
-                groupData.groupPrefix = group.groupPrefix
-                groupData.groupType = group.groupType.rawValue
-                groupData.groupURL = group.groupURL
-                array.append(groupData)
-            }
+        lessonData.dayName = lesson.dayName.rawValue
+        lessonData.dayNumber = lesson.dayNumber
+        lessonData.groupID = lesson.groupID
+        lessonData.lessonFullName = lesson.lessonFullName
+        lessonData.lessonID = lesson.id
+        lessonData.lessonName = lesson.lessonName
+        lessonData.lessonNumber = lesson.lessonNumber
+        lessonData.lessonRoom = lesson.lessonRoom
+        lessonData.lessonType = lesson.lessonType.rawValue
+        lessonData.lessonWeek = lesson.lessonWeek
+        lessonData.rate = lesson.rate
+        lessonData.dayName = lesson.dayName.rawValue
+        lessonData.teacherName = lesson.teacherName
+        lessonData.timeEnd = lesson.timeEnd
+        lessonData.timeStart = lesson.timeStart
         
-            
-            lessonData.roomsRelationship = roomData
-            lessonData.teachersRelationship = teacherData
-            lessonData.groupsRelationship = NSSet(array: array)
-            
-
-            do {
-                try managedContext.save()
-            } catch let error as NSError {
-                print("Could not save. \(error), \(error.userInfo)")
-            }
-            
-            
+        
+        let roomData = RoomsData(context: managedContext)
+        
+        if lesson.rooms.count != 0 {
+            roomData.roomID = lesson.rooms[0].roomID
+            roomData.roomLatitude = lesson.rooms[0].roomLatitude
+            roomData.roomLongitude = lesson.rooms[0].roomLongitude
+            roomData.roomName = lesson.rooms[0].roomName
         }
         
-        complition()
+        
+        let teacherData = TeachersData(context: managedContext)
+
+        if lesson.teachers?.count != 0 {
+            teacherData.teacherFullName = lesson.teachers?[0].teacherFullName
+            teacherData.teacherID = lesson.teachers?[0].teacherID
+            teacherData.teacherName = lesson.teachers?[0].teacherName
+            teacherData.teacherRating = lesson.teachers?[0].teacherRating
+            teacherData.teacherShortName = lesson.teachers?[0].teacherShortName
+            teacherData.teacherURL = lesson.teachers?[0].teacherURL
+        }
+        
+        
+        var array: [GroupData] = []
+        
+        for group in lesson.groups ?? [] {
+            let groupData = GroupData(context: managedContext)
+            groupData.groupFullName = group.groupFullName
+            groupData.groupID = Int32(group.groupID)
+            groupData.groupOkr = group.groupOkr.rawValue
+            groupData.groupPrefix = group.groupPrefix
+            groupData.groupType = group.groupType.rawValue
+            groupData.groupURL = group.groupURL
+            array.append(groupData)
+        }
+    
+        
+        lessonData.roomsRelationship = roomData
+        lessonData.teachersRelationship = teacherData
+        lessonData.groupsRelationship = NSSet(array: array)
+        
+
+        do {
+            try managedContext.save()
+        } catch let error as NSError {
+            print("Could not save. \(error), \(error.userInfo)")
+        }
     }
     
 }

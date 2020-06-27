@@ -18,23 +18,19 @@ struct LessonsView: View {
 
             LessonsList(week: week)
                 
-                .navigationBarTitle(Text("ІВ-82"))
-                
-                
-                .navigationBarItems(trailing:
-                    Picker("", selection: $week) {
-                        Text("1").tag(1)
-                        Text("2").tag(2)
-                    }
-                    .pickerStyle(SegmentedPickerStyle())
-                    .frame(width: 120, height: .none, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                )
-                
-                .onAppear {
-                    getGroups(complition: { lessons in
-                        updateCoreData(lessons: lessons, managedContext: managedObjectContext, complition: {})
-                    })
+            .navigationBarTitle(Text("ІВ-82"))
+            
+            .navigationBarItems(trailing:
+                Picker("", selection: $week) {
+                    Text("1").tag(1)
+                    Text("2").tag(2)
                 }
+                .pickerStyle(SegmentedPickerStyle())
+                .frame(width: 120, height: .none, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+            )
+            
+            
+            
         }
     }
 }

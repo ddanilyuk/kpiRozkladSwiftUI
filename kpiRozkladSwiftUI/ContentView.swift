@@ -7,9 +7,7 @@
 
 import SwiftUI
 
-//let lessonToTest = Lesson(id: "1", dayNumber: "1", groupID: "123", dayName: DayName.mounday, lessonName: "SwiftUI tutorials", lessonFullName: "SwiftUI tutorials apple", lessonNumber: "1", lessonRoom: "1", lessonType: .лаб, teacherName: "TeacherName", lessonWeek: "1", timeStart: "08:30", timeEnd: "10:25", rate: "1", teachers: [], rooms: [], groups: [])
-//
-//var lessons: [Lesson] = Array(repeating: lessonToTest, count: 1)
+
 
 
 
@@ -18,9 +16,10 @@ struct ContentView: View {
     
     init() {
         UISegmentedControl.appearance().selectedSegmentTintColor = .systemBlue
-            UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
-            UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.systemBlue], for: .normal)
-        UITableView.appearance().backgroundColor = .secondarySystemBackground
+        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
+        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.systemBlue], for: .normal)
+//        if #available(iOS, *13.0)
+        UITableView.appearance().backgroundColor = AppColors.tintUIColor
     }
     
     var body: some View {

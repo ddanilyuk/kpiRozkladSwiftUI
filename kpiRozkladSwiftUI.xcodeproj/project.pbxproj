@@ -9,8 +9,33 @@
 /* Begin PBXBuildFile section */
 		5F5F7CE524A76BC900FB1AC4 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5F7CE424A76BC900FB1AC4 /* SettingsView.swift */; };
 		5F5F7CE724A76C3600FB1AC4 /* CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5F7CE624A76C3600FB1AC4 /* CoreDataHelpers.swift */; };
+		5F6959BE24A7C407008B70D6 /* JSONNull.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC592A824A65FAE00CBB631 /* JSONNull.swift */; };
+		5F6959BF24A7C407008B70D6 /* LessonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC592A324A65FAD00CBB631 /* LessonType.swift */; };
+		5F6959C024A7C407008B70D6 /* Teacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC592A724A65FAE00CBB631 /* Teacher.swift */; };
+		5F6959C124A7C407008B70D6 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC592A524A65FAD00CBB631 /* Room.swift */; };
+		5F6959C224A7C407008B70D6 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC592A224A65FAD00CBB631 /* ErrorMessage.swift */; };
+		5F6959C324A7C407008B70D6 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC592AA24A65FAE00CBB631 /* Group.swift */; };
+		5F6959C424A7C407008B70D6 /* DayName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC592A624A65FAD00CBB631 /* DayName.swift */; };
+		5F6959C524A7C407008B70D6 /* Meta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC592A424A65FAD00CBB631 /* Meta.swift */; };
+		5F6959C624A7C407008B70D6 /* Lesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC592A924A65FAE00CBB631 /* Lesson.swift */; };
+		5F6959C724A7C66B008B70D6 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC592B424A6600F00CBB631 /* UserData.swift */; };
+		5F6959C824A7C66B008B70D6 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC592B624A68F2900CBB631 /* Server.swift */; };
+		5F6959C924A7C66B008B70D6 /* CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5F7CE624A76C3600FB1AC4 /* CoreDataHelpers.swift */; };
+		5F6959CA24A7C673008B70D6 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC592B824A695C600CBB631 /* String+Extensions.swift */; };
+		5F6959CB24A7C69A008B70D6 /* kpiRozklad.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5FA0367A24A76832006BD534 /* kpiRozklad.xcdatamodeld */; };
+		5F6959CC24A7C6AB008B70D6 /* LessonRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC5929F24A65F5900CBB631 /* LessonRow.swift */; };
+		5F831B2D24A7AAB3000D811C /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F831B2C24A7AAB3000D811C /* WidgetKit.framework */; };
+		5F831B2F24A7AAB3000D811C /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F831B2E24A7AAB3000D811C /* SwiftUI.framework */; };
+		5F831B3224A7AAB3000D811C /* kpiRozkladWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F831B3124A7AAB3000D811C /* kpiRozkladWidget.swift */; };
+		5F831B3524A7AAB5000D811C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F831B3424A7AAB5000D811C /* Assets.xcassets */; };
+		5F831B3724A7AAB5000D811C /* kpiRozkladWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 5F831B3324A7AAB3000D811C /* kpiRozkladWidget.intentdefinition */; };
+		5F831B3824A7AAB5000D811C /* kpiRozkladWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 5F831B3324A7AAB3000D811C /* kpiRozkladWidget.intentdefinition */; };
+		5F831B3B24A7AAB5000D811C /* kpiRozkladWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5F831B2A24A7AAB3000D811C /* kpiRozkladWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5F831B4124A7AC70000D811C /* WidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F831B4024A7AC70000D811C /* WidgetView.swift */; };
+		5F831B4224A7AD2D000D811C /* WidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F831B4024A7AC70000D811C /* WidgetView.swift */; };
 		5F8972A424A7A614006522E3 /* LessonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8972A324A7A614006522E3 /* LessonsView.swift */; };
 		5FA0367C24A76832006BD534 /* kpiRozklad.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5FA0367A24A76832006BD534 /* kpiRozklad.xcdatamodeld */; };
+		5FBFA1C824A7D16500FFB7C3 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBFA1C724A7D16500FFB7C3 /* AppColors.swift */; };
 		5FC5922A24A65A2200CBB631 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC5922924A65A2200CBB631 /* AppDelegate.swift */; };
 		5FC5922C24A65A2200CBB631 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC5922B24A65A2200CBB631 /* SceneDelegate.swift */; };
 		5FC5922F24A65A2200CBB631 /* kpiRozkladSwiftUI.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5FC5922D24A65A2200CBB631 /* kpiRozkladSwiftUI.xcdatamodeld */; };
@@ -37,6 +62,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		5F831B3924A7AAB5000D811C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5FC5921E24A65A2200CBB631 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5F831B2924A7AAB3000D811C;
+			remoteInfo = kpiRozkladWidgetExtension;
+		};
 		5FC5924024A65A2300CBB631 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5FC5921E24A65A2200CBB631 /* Project object */;
@@ -53,11 +85,35 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		5F831B3F24A7AAB5000D811C /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				5F831B3B24A7AAB5000D811C /* kpiRozkladWidgetExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		5F5F7CE424A76BC900FB1AC4 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		5F5F7CE624A76C3600FB1AC4 /* CoreDataHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelpers.swift; sourceTree = "<group>"; };
+		5F831B2A24A7AAB3000D811C /* kpiRozkladWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = kpiRozkladWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F831B2C24A7AAB3000D811C /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		5F831B2E24A7AAB3000D811C /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		5F831B3124A7AAB3000D811C /* kpiRozkladWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kpiRozkladWidget.swift; sourceTree = "<group>"; };
+		5F831B3324A7AAB3000D811C /* kpiRozkladWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = kpiRozkladWidget.intentdefinition; sourceTree = "<group>"; };
+		5F831B3424A7AAB5000D811C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5F831B3624A7AAB5000D811C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5F831B4024A7AC70000D811C /* WidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetView.swift; sourceTree = "<group>"; };
 		5F8972A324A7A614006522E3 /* LessonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsView.swift; sourceTree = "<group>"; };
 		5FA0367B24A76832006BD534 /* Lesson.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Lesson.xcdatamodel; sourceTree = "<group>"; };
+		5FBFA1C724A7D16500FFB7C3 /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
+		5FBFA1C924A7D4A800FFB7C3 /* kpiRozkladSwiftUI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = kpiRozkladSwiftUI.entitlements; sourceTree = "<group>"; };
 		5FC5922624A65A2200CBB631 /* kpiRozkladSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kpiRozkladSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FC5922924A65A2200CBB631 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5FC5922B24A65A2200CBB631 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +146,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		5F831B2724A7AAB3000D811C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F831B2F24A7AAB3000D811C /* SwiftUI.framework in Frameworks */,
+				5F831B2D24A7AAB3000D811C /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5FC5922324A65A2200CBB631 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -114,6 +179,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5F831B2B24A7AAB3000D811C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5F831B2C24A7AAB3000D811C /* WidgetKit.framework */,
+				5F831B2E24A7AAB3000D811C /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5F831B3024A7AAB3000D811C /* kpiRozkladWidget */ = {
+			isa = PBXGroup;
+			children = (
+				5F831B3124A7AAB3000D811C /* kpiRozkladWidget.swift */,
+				5F831B3324A7AAB3000D811C /* kpiRozkladWidget.intentdefinition */,
+				5F831B3424A7AAB5000D811C /* Assets.xcassets */,
+				5F831B3624A7AAB5000D811C /* Info.plist */,
+			);
+			path = kpiRozkladWidget;
+			sourceTree = "<group>";
+		};
 		5F8972A524A7A649006522E3 /* Lessons */ = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +223,8 @@
 				5FC5922824A65A2200CBB631 /* kpiRozkladSwiftUI */,
 				5FC5924224A65A2300CBB631 /* kpiRozkladSwiftUITests */,
 				5FC5924D24A65A2300CBB631 /* kpiRozkladSwiftUIUITests */,
+				5F831B3024A7AAB3000D811C /* kpiRozkladWidget */,
+				5F831B2B24A7AAB3000D811C /* Frameworks */,
 				5FC5922724A65A2200CBB631 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -148,6 +235,7 @@
 				5FC5922624A65A2200CBB631 /* kpiRozkladSwiftUI.app */,
 				5FC5923F24A65A2300CBB631 /* kpiRozkladSwiftUITests.xctest */,
 				5FC5924A24A65A2300CBB631 /* kpiRozkladSwiftUIUITests.xctest */,
+				5F831B2A24A7AAB3000D811C /* kpiRozkladWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -155,14 +243,16 @@
 		5FC5922824A65A2200CBB631 /* kpiRozkladSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				5FBFA1C924A7D4A800FFB7C3 /* kpiRozkladSwiftUI.entitlements */,
 				5FC5922924A65A2200CBB631 /* AppDelegate.swift */,
 				5FC5922B24A65A2200CBB631 /* SceneDelegate.swift */,
+				5FC5923024A65A2200CBB631 /* ContentView.swift */,
 				5FC592A124A65F9200CBB631 /* Structs */,
 				5FC592BA24A7332200CBB631 /* Helpers */,
 				5FC592BB24A7332900CBB631 /* Resources */,
-				5FC5923024A65A2200CBB631 /* ContentView.swift */,
 				5F8972A524A7A649006522E3 /* Lessons */,
 				5F8972A624A7A65F006522E3 /* Settings */,
+				5F831B4024A7AC70000D811C /* WidgetView.swift */,
 				5FC5923A24A65A2300CBB631 /* Info.plist */,
 				5FA0367A24A76832006BD534 /* kpiRozklad.xcdatamodeld */,
 				5FC5922D24A65A2200CBB631 /* kpiRozkladSwiftUI.xcdatamodeld */,
@@ -219,6 +309,7 @@
 				5F5F7CE624A76C3600FB1AC4 /* CoreDataHelpers.swift */,
 				5FC592B424A6600F00CBB631 /* UserData.swift */,
 				5FC592B624A68F2900CBB631 /* Server.swift */,
+				5FBFA1C724A7D16500FFB7C3 /* AppColors.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -236,6 +327,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		5F831B2924A7AAB3000D811C /* kpiRozkladWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5F831B3C24A7AAB5000D811C /* Build configuration list for PBXNativeTarget "kpiRozkladWidgetExtension" */;
+			buildPhases = (
+				5F831B2624A7AAB3000D811C /* Sources */,
+				5F831B2724A7AAB3000D811C /* Frameworks */,
+				5F831B2824A7AAB3000D811C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = kpiRozkladWidgetExtension;
+			productName = kpiRozkladWidgetExtension;
+			productReference = 5F831B2A24A7AAB3000D811C /* kpiRozkladWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		5FC5922524A65A2200CBB631 /* kpiRozkladSwiftUI */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5FC5925324A65A2300CBB631 /* Build configuration list for PBXNativeTarget "kpiRozkladSwiftUI" */;
@@ -243,10 +351,12 @@
 				5FC5922224A65A2200CBB631 /* Sources */,
 				5FC5922324A65A2200CBB631 /* Frameworks */,
 				5FC5922424A65A2200CBB631 /* Resources */,
+				5F831B3F24A7AAB5000D811C /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				5F831B3A24A7AAB5000D811C /* PBXTargetDependency */,
 			);
 			name = kpiRozkladSwiftUI;
 			productName = kpiRozkladSwiftUI;
@@ -298,6 +408,9 @@
 				LastSwiftUpdateCheck = 1200;
 				LastUpgradeCheck = 1200;
 				TargetAttributes = {
+					5F831B2924A7AAB3000D811C = {
+						CreatedOnToolsVersion = 12.0;
+					};
 					5FC5922524A65A2200CBB631 = {
 						CreatedOnToolsVersion = 12.0;
 					};
@@ -327,11 +440,20 @@
 				5FC5922524A65A2200CBB631 /* kpiRozkladSwiftUI */,
 				5FC5923E24A65A2300CBB631 /* kpiRozkladSwiftUITests */,
 				5FC5924924A65A2300CBB631 /* kpiRozkladSwiftUIUITests */,
+				5F831B2924A7AAB3000D811C /* kpiRozkladWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		5F831B2824A7AAB3000D811C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F831B3524A7AAB5000D811C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5FC5922424A65A2200CBB631 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -359,6 +481,31 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		5F831B2624A7AAB3000D811C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F6959C924A7C66B008B70D6 /* CoreDataHelpers.swift in Sources */,
+				5F6959C824A7C66B008B70D6 /* Server.swift in Sources */,
+				5F6959C724A7C66B008B70D6 /* UserData.swift in Sources */,
+				5F6959C324A7C407008B70D6 /* Group.swift in Sources */,
+				5F6959CA24A7C673008B70D6 /* String+Extensions.swift in Sources */,
+				5F6959C024A7C407008B70D6 /* Teacher.swift in Sources */,
+				5F831B4224A7AD2D000D811C /* WidgetView.swift in Sources */,
+				5F6959C624A7C407008B70D6 /* Lesson.swift in Sources */,
+				5F6959CC24A7C6AB008B70D6 /* LessonRow.swift in Sources */,
+				5F6959C124A7C407008B70D6 /* Room.swift in Sources */,
+				5F6959C524A7C407008B70D6 /* Meta.swift in Sources */,
+				5F831B3224A7AAB3000D811C /* kpiRozkladWidget.swift in Sources */,
+				5F6959C224A7C407008B70D6 /* ErrorMessage.swift in Sources */,
+				5F6959BE24A7C407008B70D6 /* JSONNull.swift in Sources */,
+				5F831B3724A7AAB5000D811C /* kpiRozkladWidget.intentdefinition in Sources */,
+				5F6959BF24A7C407008B70D6 /* LessonType.swift in Sources */,
+				5F6959CB24A7C69A008B70D6 /* kpiRozklad.xcdatamodeld in Sources */,
+				5F6959C424A7C407008B70D6 /* DayName.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5FC5922224A65A2200CBB631 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -374,12 +521,15 @@
 				5FA0367C24A76832006BD534 /* kpiRozklad.xcdatamodeld in Sources */,
 				5FC592AE24A65FAE00CBB631 /* Room.swift in Sources */,
 				5FC592B124A65FAE00CBB631 /* JSONNull.swift in Sources */,
+				5F831B3824A7AAB5000D811C /* kpiRozkladWidget.intentdefinition in Sources */,
 				5FC592B324A65FAE00CBB631 /* Group.swift in Sources */,
+				5FBFA1C824A7D16500FFB7C3 /* AppColors.swift in Sources */,
 				5FC592B224A65FAE00CBB631 /* Lesson.swift in Sources */,
 				5FC5923124A65A2200CBB631 /* ContentView.swift in Sources */,
 				5FC592BD24A7336C00CBB631 /* LessonsList.swift in Sources */,
 				5FC592AB24A65FAE00CBB631 /* ErrorMessage.swift in Sources */,
 				5FC592B924A695C600CBB631 /* String+Extensions.swift in Sources */,
+				5F831B4124A7AC70000D811C /* WidgetView.swift in Sources */,
 				5FC5922F24A65A2200CBB631 /* kpiRozkladSwiftUI.xcdatamodeld in Sources */,
 				5FC592AF24A65FAE00CBB631 /* DayName.swift in Sources */,
 				5F5F7CE724A76C3600FB1AC4 /* CoreDataHelpers.swift in Sources */,
@@ -407,6 +557,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		5F831B3A24A7AAB5000D811C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5F831B2924A7AAB3000D811C /* kpiRozkladWidgetExtension */;
+			targetProxy = 5F831B3924A7AAB5000D811C /* PBXContainerItemProxy */;
+		};
 		5FC5924124A65A2300CBB631 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 5FC5922524A65A2200CBB631 /* kpiRozkladSwiftUI */;
@@ -431,6 +586,48 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		5F831B3D24A7AAB5000D811C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M92VXVU7J9;
+				INFOPLIST_FILE = kpiRozkladWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ddanilyuk.kpiRozkladSwiftUI.kpiRozkladWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5F831B3E24A7AAB5000D811C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M92VXVU7J9;
+				INFOPLIST_FILE = kpiRozkladWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ddanilyuk.kpiRozkladSwiftUI.kpiRozkladWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		5FC5925124A65A2300CBB631 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -550,8 +747,10 @@
 		5FC5925424A65A2300CBB631 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = kpiRozkladSwiftUI/kpiRozkladSwiftUI.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"kpiRozkladSwiftUI/Preview Content\"";
 				DEVELOPMENT_TEAM = M92VXVU7J9;
@@ -571,8 +770,10 @@
 		5FC5925524A65A2300CBB631 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = kpiRozkladSwiftUI/kpiRozkladSwiftUI.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"kpiRozkladSwiftUI/Preview Content\"";
 				DEVELOPMENT_TEAM = M92VXVU7J9;
@@ -676,6 +877,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		5F831B3C24A7AAB5000D811C /* Build configuration list for PBXNativeTarget "kpiRozkladWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5F831B3D24A7AAB5000D811C /* Debug */,
+				5F831B3E24A7AAB5000D811C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		5FC5922124A65A2200CBB631 /* Build configuration list for PBXProject "kpiRozkladSwiftUI" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

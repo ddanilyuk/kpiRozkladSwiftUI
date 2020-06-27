@@ -10,7 +10,7 @@ import Foundation
 
 
 // MARK: - Datum
-struct Group: Codable {
+struct Group: Codable, Hashable {
     let groupID: Int
     let groupFullName: String
     let groupPrefix: String
@@ -29,13 +29,13 @@ struct Group: Codable {
 }
 
 
-enum GroupOkr: String, Codable {
+enum GroupOkr: String, Codable, Hashable {
     case bachelor = "bachelor"
     case magister = "magister"
 }
 
 
-enum GroupType: String, Codable {
+enum GroupType: String, Codable, Hashable {
     case daily = "daily"
     case extramural = "extramural"
 }

@@ -9,7 +9,7 @@
 import UIKit
 
 
-enum DayName: String, Codable, Comparable, CaseIterable {
+enum DayName: String, Codable, Comparable, CaseIterable, Hashable {
     
     case mounday = "Понеділок"
     case tuesday = "Вівторок"
