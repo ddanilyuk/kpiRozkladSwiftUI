@@ -9,8 +9,9 @@
 import UIKit
 
 
-struct Room: Codable, Hashable {
-    let roomID, roomName, roomLatitude, roomLongitude: String
+public struct Room: Codable, Hashable {
+    let roomID: Int
+    let roomName, roomLatitude, roomLongitude: String
 
     enum CodingKeys: String, CodingKey {
         case roomID = "room_id"

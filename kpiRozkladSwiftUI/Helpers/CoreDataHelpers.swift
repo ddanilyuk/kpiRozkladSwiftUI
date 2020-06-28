@@ -17,168 +17,168 @@ import CoreData
 
  - Returns: Lessons from Core Data
  */
-func fetchingCoreData(managedContext: NSManagedObjectContext) -> [Lesson] {
-        
+//func fetchingCoreData(managedContext: NSManagedObjectContext) -> [Lesson] {
+//        
+////    let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "LessonData")
+////    let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entity: LessonData.entity())
 //    let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "LessonData")
-//    let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entity: LessonData.entity())
-    let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "LessonData")
-    
-//    let fetch = NSFetchRequestResult
-
-    var lessonsArray: [Lesson] = []
-    do {
-        guard let fetchResult = try managedContext.fetch(fetchRequest) as? [LessonData] else { return [] }
-
-        for lessonData in fetchResult {
-            
-            var roomsArray: [Room] = []
-            let room: Room?
-            
-            if let roomData = lessonData.roomsRelationship {
-                room = Room(roomID: roomData.roomID ?? "",
-                            roomName: roomData.roomName ?? "",
-                            roomLatitude: roomData.roomLatitude ?? "",
-                            roomLongitude: roomData.roomLongitude ?? "")
-                
-                if let room = room {
-                    roomsArray.append(room)
-                }
-            }
-            
-            
-            var teachersArray: [Teacher] = []
-            let teacher: Teacher?
-            
-            if let teacherData = lessonData.teachersRelationship {
-                teacher = Teacher(teacherID: teacherData.teacherID ?? "",
-                                  teacherName: teacherData.teacherName ?? "",
-                                  teacherFullName: teacherData.teacherFullName ?? "",
-                                  teacherShortName: teacherData.teacherShortName ?? "",
-                                  teacherURL: teacherData.teacherURL ?? "",
-                                  teacherRating: teacherData.teacherRating ?? "")
-                
-                if let teacher = teacher {
-                    teachersArray.append(teacher)
-                }
-            }
-        
-            
-            var groupsArray: [Group] = []
-
-            if let groupsDataArray = lessonData.groupsRelationship?.allObjects as? [GroupData] {
-                for groupData in groupsDataArray {
-                    let group = Group(groupID: Int(groupData.groupID),
-                                      groupFullName: groupData.groupFullName ?? "",
-                                      groupPrefix: groupData.groupFullName ?? "",
-                                      groupOkr: GroupOkr(rawValue: groupData.groupOkr ?? "") ?? GroupOkr.bachelor,
-                                      groupType: GroupType(rawValue: groupData.groupType ?? "") ?? GroupType.daily,
-                                      groupURL: groupData.groupURL ?? "")
-                    
-                    groupsArray.append(group)
-                }
-            }
-            
-            
-            let lesson = Lesson(id: lessonData.lessonID ?? "",
-                                dayNumber: lessonData.dayNumber ?? "",
-                                groupID: lessonData.groupID ?? "",
-                                dayName: DayName(rawValue: lessonData.dayName ?? "") ?? DayName.mounday,
-                                lessonName: lessonData.lessonName ?? "",
-                                lessonFullName: lessonData.lessonFullName ?? "",
-                                lessonNumber: lessonData.lessonNumber ?? "",
-                                lessonRoom: lessonData.lessonRoom ?? "",
-                                lessonType: LessonType(rawValue: lessonData.lessonType ?? "") ?? LessonType.empty,
-                                teacherName: lessonData.teacherName ?? "",
-                                lessonWeek: lessonData.lessonWeek ?? "",
-                                timeStart: lessonData.timeStart ?? "",
-                                timeEnd: lessonData.timeEnd ?? "",
-                                rate: lessonData.rate ?? "",
-                                teachers: teachersArray,
-                                rooms: roomsArray,
-                                groups: groupsArray)
-            
-            lessonsArray.append(lesson)
-        }
-    } catch let error as NSError {
-        print("Could not save. \(error), \(error.userInfo)")
-    }
-    
-    return lessonsArray
-}
+//    
+////    let fetch = NSFetchRequestResult
+//
+//    var lessonsArray: [Lesson] = []
+//    do {
+//        guard let fetchResult = try managedContext.fetch(fetchRequest) as? [LessonData] else { return [] }
+//
+//        for lessonData in fetchResult {
+//            
+//            var roomsArray: [Room] = []
+//            let room: Room?
+//            
+//            if let roomData = lessonData.roomsRelationship {
+//                room = Room(roomID: roomData.roomID ?? "",
+//                            roomName: roomData.roomName ?? "",
+//                            roomLatitude: roomData.roomLatitude ?? "",
+//                            roomLongitude: roomData.roomLongitude ?? "")
+//                
+//                if let room = room {
+//                    roomsArray.append(room)
+//                }
+//            }
+//            
+//            
+//            var teachersArray: [Teacher] = []
+//            let teacher: Teacher?
+//            
+//            if let teacherData = lessonData.teachersRelationship {
+//                teacher = Teacher(teacherID: teacherData.teacherID ?? "",
+//                                  teacherName: teacherData.teacherName ?? "",
+//                                  teacherFullName: teacherData.teacherFullName ?? "",
+//                                  teacherShortName: teacherData.teacherShortName ?? "",
+//                                  teacherURL: teacherData.teacherURL ?? "",
+//                                  teacherRating: teacherData.teacherRating ?? "")
+//                
+//                if let teacher = teacher {
+//                    teachersArray.append(teacher)
+//                }
+//            }
+//        
+//            
+//            var groupsArray: [Group] = []
+//
+//            if let groupsDataArray = lessonData.groupsRelationship?.allObjects as? [GroupData] {
+//                for groupData in groupsDataArray {
+//                    let group = Group(groupID: Int(groupData.groupID),
+//                                      groupFullName: groupData.groupFullName ?? "",
+//                                      groupPrefix: groupData.groupFullName ?? "",
+//                                      groupOkr: GroupOkr(rawValue: groupData.groupOkr ?? "") ?? GroupOkr.bachelor,
+//                                      groupType: GroupType(rawValue: groupData.groupType ?? "") ?? GroupType.daily,
+//                                      groupURL: groupData.groupURL ?? "")
+//                    
+//                    groupsArray.append(group)
+//                }
+//            }
+//            
+//            
+//            let lesson = Lesson(id: lessonData.lessonID ?? "",
+//                                dayNumber: lessonData.dayNumber ?? "",
+//                                groupID: lessonData.groupID ?? "",
+//                                dayName: DayName(rawValue: lessonData.dayName ?? "") ?? DayName.mounday,
+//                                lessonName: lessonData.lessonName ?? "",
+//                                lessonFullName: lessonData.lessonFullName ?? "",
+//                                lessonNumber: lessonData.lessonNumber ?? "",
+//                                lessonRoom: lessonData.lessonRoom ?? "",
+//                                lessonType: LessonType(rawValue: lessonData.lessonType ?? "") ?? LessonType.empty,
+//                                teacherName: lessonData.teacherName ?? "",
+//                                lessonWeek: lessonData.lessonWeek ?? "",
+//                                timeStart: lessonData.timeStart ?? "",
+//                                timeEnd: lessonData.timeEnd ?? "",
+//                                rate: lessonData.rate ?? "",
+//                                teachers: teachersArray,
+//                                rooms: roomsArray,
+//                                groups: groupsArray)
+//            
+//            lessonsArray.append(lesson)
+//        }
+//    } catch let error as NSError {
+//        print("Could not save. \(error), \(error.userInfo)")
+//    }
+//    
+//    return lessonsArray
+//}
 
 
 
-func lessonDataToLesson(lessonData: LessonData) -> Lesson {
-
-    var roomsArray: [Room] = []
-    let room: Room?
-
-    if let roomData = lessonData.roomsRelationship {
-        room = Room(roomID: roomData.roomID ?? "",
-                    roomName: roomData.roomName ?? "",
-                    roomLatitude: roomData.roomLatitude ?? "",
-                    roomLongitude: roomData.roomLongitude ?? "")
-        
-        if let room = room {
-            roomsArray.append(room)
-        }
-    }
-
-
-    var teachersArray: [Teacher] = []
-    let teacher: Teacher?
-
-    if let teacherData = lessonData.teachersRelationship {
-        teacher = Teacher(teacherID: teacherData.teacherID ?? "",
-                          teacherName: teacherData.teacherName ?? "",
-                          teacherFullName: teacherData.teacherFullName ?? "",
-                          teacherShortName: teacherData.teacherShortName ?? "",
-                          teacherURL: teacherData.teacherURL ?? "",
-                          teacherRating: teacherData.teacherRating ?? "")
-        
-        if let teacher = teacher {
-            teachersArray.append(teacher)
-        }
-    }
-
-
-    var groupsArray: [Group] = []
-
-    if let groupsDataArray = lessonData.groupsRelationship?.allObjects as? [GroupData] {
-        for groupData in groupsDataArray {
-            let group = Group(groupID: Int(groupData.groupID),
-                              groupFullName: groupData.groupFullName ?? "",
-                              groupPrefix: groupData.groupFullName ?? "",
-                              groupOkr: GroupOkr(rawValue: groupData.groupOkr ?? "") ?? GroupOkr.bachelor,
-                              groupType: GroupType(rawValue: groupData.groupType ?? "") ?? GroupType.daily,
-                              groupURL: groupData.groupURL ?? "")
-            
-            groupsArray.append(group)
-        }
-    }
-
-
-    let lesson = Lesson(id: lessonData.lessonID ?? "",
-                        dayNumber: lessonData.dayNumber ?? "",
-                        groupID: lessonData.groupID ?? "",
-                        dayName: DayName(rawValue: lessonData.dayName ?? "") ?? DayName.mounday,
-                        lessonName: lessonData.lessonName ?? "",
-                        lessonFullName: lessonData.lessonFullName ?? "",
-                        lessonNumber: lessonData.lessonNumber ?? "",
-                        lessonRoom: lessonData.lessonRoom ?? "",
-                        lessonType: LessonType(rawValue: lessonData.lessonType ?? "") ?? LessonType.empty,
-                        teacherName: lessonData.teacherName ?? "",
-                        lessonWeek: lessonData.lessonWeek ?? "",
-                        timeStart: lessonData.timeStart ?? "",
-                        timeEnd: lessonData.timeEnd ?? "",
-                        rate: lessonData.rate ?? "",
-                        teachers: teachersArray,
-                        rooms: roomsArray,
-                        groups: groupsArray)
-
-    return lesson
-
-}
+//func lessonDataToLesson(lessonData: LessonData) -> Lesson {
+//
+//    var roomsArray: [Room] = []
+//    let room: Room?
+//
+//    if let roomData = lessonData.roomsRelationship {
+//        room = Room(roomID: roomData.roomID ?? "",
+//                    roomName: roomData.roomName ?? "",
+//                    roomLatitude: roomData.roomLatitude ?? "",
+//                    roomLongitude: roomData.roomLongitude ?? "")
+//
+//        if let room = room {
+//            roomsArray.append(room)
+//        }
+//    }
+//
+//
+//    var teachersArray: [Teacher] = []
+//    let teacher: Teacher?
+//
+//    if let teacherData = lessonData.teachersRelationship {
+//        teacher = Teacher(teacherID: teacherData.teacherID ?? "",
+//                          teacherName: teacherData.teacherName ?? "",
+//                          teacherFullName: teacherData.teacherFullName ?? "",
+//                          teacherShortName: teacherData.teacherShortName ?? "",
+//                          teacherURL: teacherData.teacherURL ?? "",
+//                          teacherRating: teacherData.teacherRating ?? "")
+//
+//        if let teacher = teacher {
+//            teachersArray.append(teacher)
+//        }
+//    }
+//
+//
+//    var groupsArray: [Group] = []
+//
+//    if let groupsDataArray = lessonData.groupsRelationship?.allObjects as? [GroupData] {
+//        for groupData in groupsDataArray {
+//            let group = Group(groupID: Int(groupData.groupID),
+//                              groupFullName: groupData.groupFullName ?? "",
+//                              groupPrefix: groupData.groupFullName ?? "",
+//                              groupOkr: GroupOkr(rawValue: groupData.groupOkr ?? "") ?? GroupOkr.bachelor,
+//                              groupType: GroupType(rawValue: groupData.groupType ?? "") ?? GroupType.daily,
+//                              groupURL: groupData.groupURL ?? "")
+//
+//            groupsArray.append(group)
+//        }
+//    }
+//
+//
+//    let lesson = Lesson(id: lessonData.lessonID ?? "",
+//                        dayNumber: lessonData.dayNumber ?? "",
+//                        groupID: lessonData.groupID ?? "",
+//                        dayName: DayName(rawValue: lessonData.dayName ?? "") ?? DayName.mounday,
+//                        lessonName: lessonData.lessonName ?? "",
+//                        lessonFullName: lessonData.lessonFullName ?? "",
+//                        lessonNumber: lessonData.lessonNumber ?? "",
+//                        lessonRoom: lessonData.lessonRoom ?? "",
+//                        lessonType: LessonType(rawValue: lessonData.lessonType ?? "") ?? LessonType.empty,
+//                        teacherName: lessonData.teacherName ?? "",
+//                        lessonWeek: lessonData.lessonWeek ?? "",
+//                        timeStart: lessonData.timeStart ?? "",
+//                        timeEnd: lessonData.timeEnd ?? "",
+//                        rate: lessonData.rate ?? "",
+//                        teachers: teachersArray,
+//                        rooms: roomsArray,
+//                        groups: groupsArray)
+//
+//    return lesson
+//
+//}
 
 
 
@@ -196,44 +196,43 @@ func updateCoreData(lessons:  [Lesson], managedContext: NSManagedObjectContext) 
 
     for lesson in lessons {
         let lessonData = LessonData(context: managedContext)
+        
+        
+//        let lesson = lessonData.wrappedLesson
 
         lessonData.dayName = lesson.dayName.rawValue
-        lessonData.dayNumber = lesson.dayNumber
-        lessonData.groupID = lesson.groupID
+        lessonData.dayNumber = Int32(lesson.dayNumber)
+        lessonData.groupID = Int32(lesson.groupID ?? 0)
         lessonData.lessonFullName = lesson.lessonFullName
-        lessonData.lessonID = lesson.id
+        lessonData.lessonID = Int32(lesson.id)
         lessonData.lessonName = lesson.lessonName
-        lessonData.lessonNumber = lesson.lessonNumber
+        lessonData.lessonNumber = Int32(lesson.lessonNumber)
         lessonData.lessonRoom = lesson.lessonRoom
         lessonData.lessonType = lesson.lessonType.rawValue
-        lessonData.lessonWeek = lesson.lessonWeek
+        lessonData.lessonWeek = Int32(lesson.lessonWeek)
         lessonData.rate = lesson.rate
         lessonData.dayName = lesson.dayName.rawValue
         lessonData.teacherName = lesson.teacherName
         lessonData.timeEnd = lesson.timeEnd
         lessonData.timeStart = lesson.timeStart
-        
+//
         
         let roomData = RoomsData(context: managedContext)
         
-        if lesson.rooms.count != 0 {
-            roomData.roomID = lesson.rooms[0].roomID
-            roomData.roomLatitude = lesson.rooms[0].roomLatitude
-            roomData.roomLongitude = lesson.rooms[0].roomLongitude
-            roomData.roomName = lesson.rooms[0].roomName
-        }
+        roomData.roomID = Int32(lesson.room?.roomID ?? 0)
+        roomData.roomLatitude = lesson.room?.roomLatitude
+        roomData.roomLongitude = lesson.room?.roomLongitude
+        roomData.roomName = lesson.room?.roomName
         
         
         let teacherData = TeachersData(context: managedContext)
 
-        if lesson.teachers?.count != 0 {
-            teacherData.teacherFullName = lesson.teachers?[0].teacherFullName
-            teacherData.teacherID = lesson.teachers?[0].teacherID
-            teacherData.teacherName = lesson.teachers?[0].teacherName
-            teacherData.teacherRating = lesson.teachers?[0].teacherRating
-            teacherData.teacherShortName = lesson.teachers?[0].teacherShortName
-            teacherData.teacherURL = lesson.teachers?[0].teacherURL
-        }
+        teacherData.teacherFullName = lesson.teacher?.teacherFullName
+        teacherData.teacherID = Int32(lesson.teacher?.teacherID ?? 0)
+        teacherData.teacherName = lesson.teacher?.teacherName
+        teacherData.teacherRating = lesson.teacher?.teacherRating
+        teacherData.teacherShortName = lesson.teacher?.teacherShortName
+        teacherData.teacherURL = lesson.teacher?.teacherURL
         
         
         var array: [GroupData] = []

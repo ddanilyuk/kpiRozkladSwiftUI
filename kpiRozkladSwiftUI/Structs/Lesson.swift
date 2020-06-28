@@ -24,19 +24,17 @@ struct WelcomeLessons: Codable {
 
 
 // MARK: - Lesson
-struct Lesson: Codable, Hashable, Identifiable {
-//    var id: ObjectIdentifier
-    
-    let id: String
-    let dayNumber: String
-    let groupID: String?
+public struct Lesson: Codable, Hashable, Identifiable {
+    public let id: Int
+    let dayNumber, lessonNumber, lessonWeek: Int
+    let groupID: Int?
     let dayName: DayName
-    let lessonName, lessonFullName, lessonNumber, lessonRoom: String
     let lessonType: LessonType
-    let teacherName, lessonWeek, timeStart, timeEnd: String
+    let lessonName, lessonFullName, lessonRoom: String
+    let teacherName, timeStart, timeEnd: String
     let rate: String
-    let teachers: [Teacher]?
-    let rooms: [Room]
+    let teacher: Teacher?
+    let room: Room?
     let groups: [Group]?
 
     
@@ -54,23 +52,26 @@ struct Lesson: Codable, Hashable, Identifiable {
         case lessonWeek = "lesson_week"
         case timeStart = "time_start"
         case timeEnd = "time_end"
-        case rate, teachers, rooms, groups
+        case room = "rooms"
+        case teacher = "teachers"
+
+        case rate, groups
     }
     
     
-    static let defaultLesson = Lesson(id: "1", dayNumber: "1", groupID: "123", dayName: DayName.mounday, lessonName: "SwiftUI tutorials", lessonFullName: "SwiftUI tutorials apple", lessonNumber: "1", lessonRoom: "1", lessonType: .лаб, teacherName: "TeacherName", lessonWeek: "1", timeStart: "08:30", timeEnd: "10:25", rate: "1", teachers: [], rooms: [], groups: [])
+    static let defaultLesson = Lesson(id: 1, dayNumber: 1, lessonNumber: 12, lessonWeek: 1, groupID: 123, dayName: DayName.mounday, lessonType: LessonType.лек1, lessonName: "Lesson Name", lessonFullName: "Lesson Full", lessonRoom: "LessonRoom", teacherName: "teacher", timeStart: "08:30", timeEnd: "10:25", rate: "rate", teacher: nil, room: nil, groups: [])
 
     static var defaultArratOfLesson: [Lesson] = Array(repeating: defaultLesson, count: 3)
 }
 
 
 extension Lesson: Comparable {
-    static func < (lhs: Lesson, rhs: Lesson) -> Bool {
+    public static func < (lhs: Lesson, rhs: Lesson) -> Bool {
         return lhs.dayName.rawValue == rhs.dayName.rawValue
 
     }
     
-    static func == (lhs: Lesson, rhs: Lesson) -> Bool {
+    public static func == (lhs: Lesson, rhs: Lesson) -> Bool {
         return lhs.dayName.rawValue < rhs.dayName.rawValue
     }
 }

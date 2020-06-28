@@ -19,9 +19,9 @@ struct WelcomeTeachers: Codable {
 }
 
 // MARK: - Datum
-struct Teacher: Codable, Hashable {
-    let teacherID, teacherName, teacherFullName, teacherShortName: String
-    let teacherURL: String
+public struct Teacher: Codable, Hashable {
+    let teacherID: Int
+    let teacherURL, teacherName, teacherFullName, teacherShortName: String
     let teacherRating: String
 
     enum CodingKeys: String, CodingKey {

@@ -55,7 +55,7 @@ struct LessonsList: View {
             normalLessons = [:]
             var lessonsFromCoreData: [Lesson] = []
             _ = lessonsCoreData.map { lessonData in
-                lessonsFromCoreData.append(lessonDataToLesson(lessonData: lessonData))
+                lessonsFromCoreData.append(lessonData.wrappedLesson)
             }
             normalLessons = makeLessonsShedule(lessons: lessonsFromCoreData)
             Lesson.defaultArratOfLesson = lessonsFromCoreData
@@ -90,8 +90,8 @@ struct LessonsList: View {
     }
     
     func makeLessonsShedule(lessons: [Lesson]) -> [Int: [DayName: [Lesson]]] {
-        let lessonsWeekFirst = lessons.filter{ return $0.lessonWeek == "1" }
-        let lessonsWeekSecond = lessons.filter{ return $0.lessonWeek == "2" }
+        let lessonsWeekFirst = lessons.filter{ return $0.lessonWeek == 1 }
+        let lessonsWeekSecond = lessons.filter{ return $0.lessonWeek == 2 }
         
         let weeks = [lessonsWeekFirst, lessonsWeekSecond]
         var ret: [Int: [DayName: [Lesson]]] = [:]
