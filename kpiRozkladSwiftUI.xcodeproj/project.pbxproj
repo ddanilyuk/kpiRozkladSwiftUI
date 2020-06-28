@@ -44,8 +44,6 @@
 		5F831B2F24A7AAB3000D811C /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F831B2E24A7AAB3000D811C /* SwiftUI.framework */; };
 		5F831B3224A7AAB3000D811C /* kpiRozkladWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F831B3124A7AAB3000D811C /* kpiRozkladWidget.swift */; };
 		5F831B3524A7AAB5000D811C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F831B3424A7AAB5000D811C /* Assets.xcassets */; };
-		5F831B3724A7AAB5000D811C /* kpiRozkladWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 5F831B3324A7AAB3000D811C /* kpiRozkladWidget.intentdefinition */; };
-		5F831B3824A7AAB5000D811C /* kpiRozkladWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 5F831B3324A7AAB3000D811C /* kpiRozkladWidget.intentdefinition */; };
 		5F831B3B24A7AAB5000D811C /* kpiRozkladWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5F831B2A24A7AAB3000D811C /* kpiRozkladWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		5F831B4124A7AC70000D811C /* WidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F831B4024A7AC70000D811C /* WidgetView.swift */; };
 		5F831B4224A7AD2D000D811C /* WidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F831B4024A7AC70000D811C /* WidgetView.swift */; };
@@ -137,7 +135,6 @@
 		5F831B2C24A7AAB3000D811C /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		5F831B2E24A7AAB3000D811C /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		5F831B3124A7AAB3000D811C /* kpiRozkladWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kpiRozkladWidget.swift; sourceTree = "<group>"; };
-		5F831B3324A7AAB3000D811C /* kpiRozkladWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = kpiRozkladWidget.intentdefinition; sourceTree = "<group>"; };
 		5F831B3424A7AAB5000D811C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5F831B3624A7AAB5000D811C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F831B4024A7AC70000D811C /* WidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetView.swift; sourceTree = "<group>"; };
@@ -176,6 +173,7 @@
 		5FC592B624A68F2900CBB631 /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
 		5FC592B824A695C600CBB631 /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		5FC592BC24A7336C00CBB631 /* LessonsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsList.swift; sourceTree = "<group>"; };
+		5FDA7ACB24A901C8008C1572 /* kpiRozkladWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = kpiRozkladWidget.entitlements; sourceTree = "<group>"; };
 		5FE6522424A8AA2F0040B12E /* WeekType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -226,7 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				5F831B3124A7AAB3000D811C /* kpiRozkladWidget.swift */,
-				5F831B3324A7AAB3000D811C /* kpiRozkladWidget.intentdefinition */,
+				5FDA7ACB24A901C8008C1572 /* kpiRozkladWidget.entitlements */,
 				5F831B3424A7AAB5000D811C /* Assets.xcassets */,
 				5F831B3624A7AAB5000D811C /* Info.plist */,
 			);
@@ -554,7 +552,6 @@
 				5F831B3224A7AAB3000D811C /* kpiRozkladWidget.swift in Sources */,
 				5F6959C224A7C407008B70D6 /* ErrorMessage.swift in Sources */,
 				5F6959BE24A7C407008B70D6 /* JSONNull.swift in Sources */,
-				5F831B3724A7AAB5000D811C /* kpiRozkladWidget.intentdefinition in Sources */,
 				5F6959BF24A7C407008B70D6 /* LessonType.swift in Sources */,
 				5F786AD224A8998E0036DEC3 /* LessonData+CoreDataProperties.swift in Sources */,
 				5F6959CB24A7C69A008B70D6 /* kpiRozkladData.xcdatamodeld in Sources */,
@@ -586,7 +583,6 @@
 				5F786ACF24A8998E0036DEC3 /* LessonData+CoreDataClass.swift in Sources */,
 				5FC592AE24A65FAE00CBB631 /* Room.swift in Sources */,
 				5FC592B124A65FAE00CBB631 /* JSONNull.swift in Sources */,
-				5F831B3824A7AAB5000D811C /* kpiRozkladWidget.intentdefinition in Sources */,
 				5FC592B324A65FAE00CBB631 /* Group.swift in Sources */,
 				5FE6522524A8AA2F0040B12E /* WeekType.swift in Sources */,
 				5FBFA1C824A7D16500FFB7C3 /* AppColors.swift in Sources */,

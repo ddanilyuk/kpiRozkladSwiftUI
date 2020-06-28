@@ -9,25 +9,6 @@ import SwiftUI
 import WidgetKit
 
 
-
-
-//struct WidgetRow: View {
-//
-//    let lesson: Lesson
-//
-//    init(lesson: Lesson) {
-//        self.lesson = lesson
-//    }
-//
-//    var body: some View {
-//        VStack {
-//            Text(lesson.lessonFullName)
-//            Text(lesson.le)
-//
-//        }
-//    }
-//}
-
 struct WidgetView: View {
     
     var lessons: [Lesson]
@@ -39,7 +20,7 @@ struct WidgetView: View {
     var body: some View {
         VStack {
             Spacer()
-            if lessons.count >= 1 {
+            if lessons.count >= 2 {
                 LessonRow(lesson: lessons[0])
                 Spacer()
                 LessonRow(lesson: lessons[1])
@@ -49,7 +30,6 @@ struct WidgetView: View {
             
             Spacer()
         }
-//        Text(lessons[0].lessonFullName)
     }
 }
 

@@ -80,8 +80,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
          application to it. This property is optional since there are legitimate
          error conditions that could cause the creation of the store to fail.
         */
-        let container = NSPersistentContainer(name: "kpiRozkladData")
-//        let container = NSCustomPersistentContainer(name: "kpiRozkladData")
+//        let container = NSPersistentContainer(name: "kpiRozkladData")
+        let container = NSCustomPersistentContainer(name: "kpiRozkladData")
 //        container.polis
         
         

@@ -25,7 +25,9 @@ struct SettingsView: View {
                         deleteAllFromCoreData(managedContext: managedObjectContext)
                         
                         getGroups() { lessons in
-                            updateCoreData(lessons: lessons, managedContext: managedObjectContext)
+                            updateCoreData(lessons: lessons, managedContext: managedObjectContext) {
+                                print("updated")
+                            }
                         }
                     }
                     Spacer()

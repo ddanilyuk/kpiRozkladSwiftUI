@@ -12,13 +12,13 @@ import CoreData
 
 struct Provider: TimelineProvider {
     
-    var managedObjectContext : NSManagedObjectContext
+    var managedObjectContext: NSManagedObjectContext
     
     init(context : NSManagedObjectContext) {
         self.managedObjectContext = context
     }
     
-    let groupID = "group.ddanilyuk.kpiRozkladSwiftUI"
+//    let groupID = "group.ddanilyuk.kpiRozkladSwiftUI"
     
     typealias Entry = SimpleEntry
     
@@ -32,6 +32,8 @@ struct Provider: TimelineProvider {
         ]
     ) public var lessonsCoreData: FetchedResults<LessonData>
 
+//    @FetchRequest(
+    
     func snapshot(with context: Context, completion: @escaping (SimpleEntry) -> ()) {
 
         let entry = SimpleEntry(date: Date(), lessons: Lesson.defaultArratOfLesson)
@@ -42,10 +44,10 @@ struct Provider: TimelineProvider {
     func timeline(with context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
         
         var lessonsFromCoreData: [Lesson] = []
-        
+//        let some = LessonData.fetchRequest()
 //        print(lessonsCoreData.count)
 //        _ = lessonsCoreData.map { lessonData in
-//            lessonsFromCoreData.append(lessonDataToLesson(lessonData: lessonData))
+//            lessonsFromCoreData.append(lessonData.wrappedLesson)
 //        }
         
         let entries = [SimpleEntry(date: Date(), lessons: lessonsFromCoreData)]
@@ -85,7 +87,8 @@ struct kpiRozkladWidget: Widget {
     private let kind: String = "kpiRozkladWidget"
 
     public var body: some WidgetConfiguration {
-        StaticConfiguration(kind: kind, provider: Provider(context: persistentContainer.viewContext), placeholder: PlaceholderView()) { entry in
+//        var wrapper = Wrapper()
+        StaticConfiguration(kind: kind, provider: Provider(context: wrapper.persistentContainer.viewContext), placeholder: PlaceholderView()) { entry in
             kpiRozkladWidgetEntryView(entry: entry)
         }
         .configurationDisplayName("Kpi Rozklad Widget")
@@ -93,16 +96,33 @@ struct kpiRozkladWidget: Widget {
         .supportedFamilies([.systemMedium])
     }
     
-    var persistentContainer: NSPersistentContainer = {
+//    var persistentContainer: NSPersistentContainer = {
+//
+//        let container = NSCustomPersistentContainer(name: "kpiRozkladData")
+//
+////        let persistentContainer = NSPersistentContainer(name: "Collect")
+////        let storeURL = URL.storeURL(for: "group.ddanilyuk.kpiRozkladSwiftUI", databaseName: "Lessons")
+////        let storeDescription = NSPersistentStoreDescription(url: storeURL)
+////        container.persistentStoreDescriptions = [storeDescription]
+//
+//        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+//            if let error = error as NSError? {
+//                fatalError("Unresolved error \(error), \(error.userInfo)")
+//            }
+//        })
+//        return container
+//    }()
+    
+}
 
-        let container = NSCustomPersistentContainer(name: "kpiRozklad")
+var wrapper = Wrapper()
+
+struct Wrapper {
+    lazy var persistentContainer: NSPersistentContainer = {
         
+        let container = NSCustomPersistentContainer(name: "kpiRozkladData")
         
-//        let persistentContainer = NSPersistentContainer(name: "Collect")
-//        let storeURL = URL.storeURL(for: "group.ddanilyuk.kpiRozkladSwiftUI", databaseName: "Lessons")
-//        let storeDescription = NSPersistentStoreDescription(url: storeURL)
-//        container.persistentStoreDescriptions = [storeDescription]
-        
+
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
