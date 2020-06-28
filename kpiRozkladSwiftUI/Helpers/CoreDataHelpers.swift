@@ -209,7 +209,7 @@ func updateCoreData(lessons:  [Lesson], managedContext: NSManagedObjectContext) 
         lessonData.lessonNumber = Int32(lesson.lessonNumber)
         lessonData.lessonRoom = lesson.lessonRoom
         lessonData.lessonType = lesson.lessonType.rawValue
-        lessonData.lessonWeek = Int32(lesson.lessonWeek)
+        lessonData.lessonWeek = Int32(lesson.lessonWeek.rawValue) ?? 1
         lessonData.rate = lesson.rate
         lessonData.dayName = lesson.dayName.rawValue
         lessonData.teacherName = lesson.teacherName
@@ -239,23 +239,32 @@ func updateCoreData(lessons:  [Lesson], managedContext: NSManagedObjectContext) 
         
         for group in lesson.groups ?? [] {
             let groupData = GroupData(context: managedContext)
-            groupData.groupFullName = group.groupFullName
-            groupData.groupID = Int32(group.groupID)
-            groupData.groupOkr = group.groupOkr.rawValue
-            groupData.groupPrefix = group.groupPrefix
-            groupData.groupType = group.groupType.rawValue
-            groupData.groupURL = group.groupURL
+//            groupData.groupFullName = group.groupFullName
+//            groupData.groupID = Int32(group.groupID)
+//            groupData.groupOkr = group.groupOkr.rawValue
+//            groupData.groupPrefix = group.groupPrefix
+//            groupData.groupType = group.groupType.rawValue
+//            groupData.groupURL = group.groupURL
+            groupData.groupFullName = group?.groupFullName
+            groupData.groupID = Int32(group?.groupID ?? 0)
+            groupData.groupOkr = group?.groupOkr.rawValue
+            groupData.groupPrefix = group?.groupPrefix
+            groupData.groupType = group?.groupType.rawValue
+            groupData.groupURL = group?.groupURL
             array.append(groupData)
         }
     
         
         lessonData.roomsRelationship = roomData
         lessonData.teachersRelationship = teacherData
-        lessonData.groupsRelationship = NSSet(array: array)
+//        lessonData.groupsRelationship = NSSet(array: array)
+        lessonData.addToGroupsRelationship(NSSet(array: array))
         
 
         do {
-            try managedContext.save()
+            if managedContext.hasChanges {
+                try managedContext.save()
+            }
         } catch let error as NSError {
             print("Could not save. \(error), \(error.userInfo)")
         }

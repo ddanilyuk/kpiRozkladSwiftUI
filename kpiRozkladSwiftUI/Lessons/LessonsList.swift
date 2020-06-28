@@ -90,8 +90,8 @@ struct LessonsList: View {
     }
     
     func makeLessonsShedule(lessons: [Lesson]) -> [Int: [DayName: [Lesson]]] {
-        let lessonsWeekFirst = lessons.filter{ return $0.lessonWeek == 1 }
-        let lessonsWeekSecond = lessons.filter{ return $0.lessonWeek == 2 }
+        let lessonsWeekFirst = lessons.filter{ return $0.lessonWeek == WeekType.first }
+        let lessonsWeekSecond = lessons.filter{ return $0.lessonWeek == WeekType.second }
         
         let weeks = [lessonsWeekFirst, lessonsWeekSecond]
         var ret: [Int: [DayName: [Lesson]]] = [:]

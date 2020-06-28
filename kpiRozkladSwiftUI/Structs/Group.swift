@@ -28,6 +28,26 @@ public struct Group: Codable, Hashable {
     }
 }
 
+extension Group {
+    public init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        
+        // Strings
+        groupFullName = try values.decode(String.self, forKey: .groupFullName)
+        groupPrefix = try values.decode(String.self, forKey: .groupPrefix)
+        groupURL = try values.decode(String.self, forKey: .groupURL)
+
+        // Enums
+        groupOkr = try values.decode(GroupOkr.self, forKey: .groupOkr)
+        groupType = try values.decode(GroupType.self, forKey: .groupType)
+
+        guard let idCasted = try Int(values.decode(String.self, forKey: .groupID)) else {
+            throw DecodingError.dataCorrupted(.init(codingPath: [CodingKeys.groupID], debugDescription: "Expecting string representation of Int"))
+        }
+        groupID = idCasted
+    }
+}
+
 
 public enum GroupOkr: String, Codable, Hashable {
     case bachelor = "bachelor"

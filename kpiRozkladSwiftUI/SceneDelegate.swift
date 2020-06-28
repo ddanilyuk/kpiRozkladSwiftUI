@@ -22,7 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         // Get the managed object context from the shared persistent container.
         let context = persistentContainer.viewContext
-        context.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
+//        context.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
 
         // Create the SwiftUI view and set the context as the value for the managedObjectContext environment keyPath.
         // Add `@Environment(\.managedObjectContext)` in the views that will need the context.
@@ -80,8 +80,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
          application to it. This property is optional since there are legitimate
          error conditions that could cause the creation of the store to fail.
         */
-//        let container = NSCustomPersistentContainer(name: "kpiRozklad")
-        let container = NSPersistentContainer(name: "kpiRozklad")
+        let container = NSPersistentContainer(name: "kpiRozkladData")
+//        let container = NSCustomPersistentContainer(name: "kpiRozkladData")
 //        container.polis
         
         
@@ -104,6 +104,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                  * The store could not be migrated to the current model version.
                  Check the error message to determine what the actual problem was.
                  */
+                print("Unresolved error \(error), \(error.userInfo)")
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
         })

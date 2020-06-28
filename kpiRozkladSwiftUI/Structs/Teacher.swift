@@ -33,3 +33,21 @@ public struct Teacher: Codable, Hashable {
         case teacherRating = "teacher_rating"
     }
 }
+
+extension Teacher {
+    public init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        
+        // Strings
+        teacherURL = try values.decode(String.self, forKey: .teacherURL)
+        teacherName = try values.decode(String.self, forKey: .teacherName)
+        teacherFullName = try values.decode(String.self, forKey: .teacherFullName)
+        teacherShortName = try values.decode(String.self, forKey: .teacherShortName)
+        teacherRating = try values.decode(String.self, forKey: .teacherRating)
+        
+        guard let idCasted = try Int(values.decode(String.self, forKey: .teacherID)) else {
+            throw DecodingError.dataCorrupted(.init(codingPath: [CodingKeys.teacherID], debugDescription: "Expecting string representation of Int"))
+        }
+        teacherID = idCasted
+    }
+}

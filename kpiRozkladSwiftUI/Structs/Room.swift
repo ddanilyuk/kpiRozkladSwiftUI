@@ -20,3 +20,20 @@ public struct Room: Codable, Hashable {
         case roomLongitude = "room_longitude"
     }
 }
+
+extension Room {
+    public init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        
+        // Strings
+        roomName = try values.decode(String.self, forKey: .roomName)
+        roomLatitude = try values.decode(String.self, forKey: .roomLatitude)
+        roomLongitude = try values.decode(String.self, forKey: .roomLongitude)
+
+        
+        guard let idCasted = try Int(values.decode(String.self, forKey: .roomID)) else {
+            throw DecodingError.dataCorrupted(.init(codingPath: [CodingKeys.roomID], debugDescription: "Expecting string representation of Int"))
+        }
+        roomID = idCasted
+    }
+}
