@@ -41,9 +41,16 @@ struct WidgetView: View {
     
     var body: some View {
         VStack {
-            LessonRow(lesson: lessons[0])
             Spacer()
-            LessonRow(lesson: lessons[1])
+            if lessons.count >= 1 {
+                LessonRow(lesson: lessons[0])
+                Spacer()
+                LessonRow(lesson: lessons[1])
+            } else {
+                Text("NoLessonsLoaded")
+            }
+            
+            Spacer()
         }
 //        Text(lessons[0].lessonFullName)
     }

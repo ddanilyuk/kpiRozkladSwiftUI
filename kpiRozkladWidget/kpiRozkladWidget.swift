@@ -8,13 +8,29 @@
 import WidgetKit
 import SwiftUI
 import Intents
-
+import CoreData
 
 struct Provider: TimelineProvider {
+    
+    var managedObjectContext : NSManagedObjectContext
+    
+    init(context : NSManagedObjectContext) {
+        self.managedObjectContext = context
+    }
     
     let groupID = "group.ddanilyuk.kpiRozkladSwiftUI"
     
     typealias Entry = SimpleEntry
+    
+//    @Environment(\.managedObjectContext) var managedObjectContext
+    
+    @FetchRequest(
+        entity: LessonData.entity(),
+        
+        sortDescriptors: [
+            NSSortDescriptor(keyPath: \LessonData.lessonID, ascending: true)
+        ]
+    ) public var lessonsCoreData: FetchedResults<LessonData>
 
     func snapshot(with context: Context, completion: @escaping (SimpleEntry) -> ()) {
 
@@ -24,7 +40,15 @@ struct Provider: TimelineProvider {
     
     
     func timeline(with context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        let entries = [SimpleEntry(date: Date(), lessons: Lesson.defaultArratOfLesson)]
+        
+        var lessonsFromCoreData: [Lesson] = []
+        
+//        print(lessonsCoreData.count)
+//        _ = lessonsCoreData.map { lessonData in
+//            lessonsFromCoreData.append(lessonDataToLesson(lessonData: lessonData))
+//        }
+        
+        let entries = [SimpleEntry(date: Date(), lessons: lessonsFromCoreData)]
 
         let timeline = Timeline(entries: entries, policy: .atEnd)
         completion(timeline)
@@ -61,14 +85,31 @@ struct kpiRozkladWidget: Widget {
     private let kind: String = "kpiRozkladWidget"
 
     public var body: some WidgetConfiguration {
-        StaticConfiguration(kind: kind, provider: Provider(), placeholder: PlaceholderView()) { entry in
+        StaticConfiguration(kind: kind, provider: Provider(context: persistentContainer.viewContext), placeholder: PlaceholderView()) { entry in
             kpiRozkladWidgetEntryView(entry: entry)
         }
         .configurationDisplayName("Kpi Rozklad Widget")
         .description("Widget with your shedule")
         .supportedFamilies([.systemMedium])
-
     }
+    
+    var persistentContainer: NSPersistentContainer = {
+
+        let container = NSCustomPersistentContainer(name: "kpiRozklad")
+        
+        
+//        let persistentContainer = NSPersistentContainer(name: "Collect")
+//        let storeURL = URL.storeURL(for: "group.ddanilyuk.kpiRozkladSwiftUI", databaseName: "Lessons")
+//        let storeDescription = NSPersistentStoreDescription(url: storeURL)
+//        container.persistentStoreDescriptions = [storeDescription]
+        
+        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+            if let error = error as NSError? {
+                fatalError("Unresolved error \(error), \(error.userInfo)")
+            }
+        })
+        return container
+    }()
 }
 
 struct kpiRozkladWidget_Previews: PreviewProvider {

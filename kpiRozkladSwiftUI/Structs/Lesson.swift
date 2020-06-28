@@ -60,7 +60,7 @@ struct Lesson: Codable, Hashable, Identifiable {
     
     static let defaultLesson = Lesson(id: "1", dayNumber: "1", groupID: "123", dayName: DayName.mounday, lessonName: "SwiftUI tutorials", lessonFullName: "SwiftUI tutorials apple", lessonNumber: "1", lessonRoom: "1", lessonType: .лаб, teacherName: "TeacherName", lessonWeek: "1", timeStart: "08:30", timeEnd: "10:25", rate: "1", teachers: [], rooms: [], groups: [])
 
-    static let defaultArratOfLesson: [Lesson] = Array(repeating: defaultLesson, count: 3)
+    static var defaultArratOfLesson: [Lesson] = Array(repeating: defaultLesson, count: 3)
 }
 
 

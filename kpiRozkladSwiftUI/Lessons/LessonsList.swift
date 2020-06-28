@@ -17,7 +17,7 @@ struct LessonsList: View {
         sortDescriptors: [
             NSSortDescriptor(keyPath: \LessonData.lessonID, ascending: true)
         ]
-    ) var lessonsCoreData: FetchedResults<LessonData>
+    ) public var lessonsCoreData: FetchedResults<LessonData>
         
     @Environment(\.managedObjectContext) var managedObjectContext
     
@@ -58,6 +58,7 @@ struct LessonsList: View {
                 lessonsFromCoreData.append(lessonDataToLesson(lessonData: lessonData))
             }
             normalLessons = makeLessonsShedule(lessons: lessonsFromCoreData)
+            Lesson.defaultArratOfLesson = lessonsFromCoreData
         }
 //        .onAppear {
 //            getGroups(complition: { lessons in

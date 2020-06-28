@@ -77,7 +77,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
          application to it. This property is optional since there are legitimate
          error conditions that could cause the creation of the store to fail.
         */
-        let container = NSPersistentContainer(name: "kpiRozklad")
+        let container = NSCustomPersistentContainer(name: "kpiRozklad")
+        
+        
+////        let persistentContainer = NSPersistentContainer(name: "Collect")
+//        let storeURL = URL.storeURL(for: "group.ddanilyuk.kpiRozkladSwiftUI", databaseName: "Lessons")
+//        let storeDescription = NSPersistentStoreDescription(url: storeURL)
+//        container.persistentStoreDescriptions = [storeDescription]
+        
         
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
