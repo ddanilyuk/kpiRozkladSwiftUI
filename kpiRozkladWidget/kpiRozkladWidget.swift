@@ -7,8 +7,8 @@
 
 import WidgetKit
 import SwiftUI
-//import Intents
 import CoreData
+
 
 struct Provider: TimelineProvider {
     
@@ -83,12 +83,18 @@ struct Provider: TimelineProvider {
         for lessonIndex in 0..<lessons.count {
             let lesson = lessons[lessonIndex]
             let (currentLessonsDateStart, currentLessonsDateEnd) = getDate(lesson: lesson)
-                
+            
+            print("---------------")
+            print(lesson)
             print("date", date)
             print("currentLessonsDateStart", currentLessonsDateStart)
             print("currentLessonsDateEnd", currentLessonsDateEnd)
+            print("currentLessonsDateStart < date", currentLessonsDateStart < date)
+            print("(currentLessonsDateStart > date && currentLessonsDateEnd < date))", (currentLessonsDateStart > date && currentLessonsDateEnd < date))
+            print("full", (currentLessonsDateStart < date || (currentLessonsDateStart > date && currentLessonsDateEnd < date)) )
 
-            if (currentLessonsDateStart < date || (currentLessonsDateStart > date && currentLessonsDateEnd < date)) && lesson.lessonWeek == currentWeekFromTodayDate && lesson.dayNumber == dayNumberFromCurrentDate {
+
+            if (currentLessonsDateStart > date || (currentLessonsDateStart < date && currentLessonsDateEnd > date)) && lesson.lessonWeek == currentWeekFromTodayDate && lesson.dayNumber == dayNumberFromCurrentDate {
                 firstNextLessonID = lesson.id
                 
                 if lessonIndex != lessons.count + 1 {
