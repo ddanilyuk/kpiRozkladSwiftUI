@@ -55,22 +55,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "F0341B94-DF6B-4F71-805B-096999C362FA"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "kpiRozkladSwiftUI/Lessons/LessonsList.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "15"
-            endingLineNumber = "15"
-            landmarkName = "LessonsList"
-            landmarkType = "14">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "819A6832-5231-4760-8599-B976F0A535C6"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -78,8 +62,8 @@
             filePath = "kpiRozkladSwiftUI/SceneDelegate.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "108"
-            endingLineNumber = "108"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
             landmarkName = "persistentContainer"
             landmarkType = "24">
          </BreakpointContent>
@@ -151,87 +135,23 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "604F6EFF-BEB1-4CDB-B55C-6A1AE3A6ADD6"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "kpiRozkladSwiftUI/Settings/SettingsView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "body"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "1C526036-C4CA-4D72-9E5C-6C0E7AB2D9CF"
+            uuid = "B8761BE2-6F4C-406A-BC3E-8C2A92CDDFAD"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "kpiRozkladWidget/kpiRozkladWidget.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
-            landmarkName = "snapshot(with:completion:)"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "timeline(with:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "E5495A8F-7F03-4211-B0CC-8F8F4D43C454"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "kpiRozkladWidget/kpiRozkladWidget.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
-            landmarkName = "body"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "7AB00951-8208-4703-B580-761F37F15C95"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "kpiRozkladWidget/kpiRozkladWidget.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
-            landmarkName = "body"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "0BA7B7EA-B949-4F23-84C6-1171BA66C6B3"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "kpiRozkladWidget/kpiRozkladWidget.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
-            landmarkName = "body"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "8B92BE43-034C-4031-B17A-0CBB45E1B49E"
+            uuid = "089209CB-A6A8-41F3-ADF9-5492932F6ABF"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -240,22 +160,86 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "78"
             endingLineNumber = "78"
-            landmarkName = "kpiRozkladWidgetEntryView"
-            landmarkType = "14">
+            landmarkName = "getNextTwoLessons(lessons:dayNumberFromCurrentDate:currentWeekFromTodayDate:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "4C19B88C-D5A3-49E3-B997-860030D8D287"
+            uuid = "22F0142C-3543-493D-8AC5-BF68DEC70BFB"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "kpiRozkladWidget/kpiRozkladWidget.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
+            landmarkName = "getNextTwoLessons(lessons:dayNumberFromCurrentDate:currentWeekFromTodayDate:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2E7C37DA-449E-4465-874D-CF14E8AC92E1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "kpiRozkladWidget/kpiRozkladWidget.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
+            landmarkName = "getNextTwoLessons(lessons:dayNumberFromCurrentDate:currentWeekFromTodayDate:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F3D5E6D9-E7A7-4076-AEEC-A1DB9A48C30D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "kpiRozkladWidget/kpiRozkladWidget.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
+            landmarkName = "getNextTwoLessons(lessons:dayNumberFromCurrentDate:currentWeekFromTodayDate:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AE84C583-8F6C-4C7B-AD56-493F54D9E9F0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "kpiRozkladWidget/kpiRozkladWidget.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
+            landmarkName = "getNextTwoLessons(lessons:dayNumberFromCurrentDate:currentWeekFromTodayDate:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3A509EE2-8CC5-4DD2-B1F1-37D9573B670D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "kpiRozkladWidget/kpiRozkladWidget.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
             landmarkName = "timeline(with:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -263,7 +247,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "613605D0-4148-4C04-905A-5AEC956E95FA"
+            uuid = "5F8E8159-69C4-49EE-87E0-E1237DB92F05"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -274,68 +258,36 @@
             endingLineNumber = "46"
             landmarkName = "timeline(with:completion:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "EC202B69-6EE9-4217-A989-198E3AED295B"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "kpiRozkladWidget/kpiRozkladWidget.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
-            landmarkName = "Provider"
-            landmarkType = "14">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "6709255A-8488-4465-B97E-F40254833A5C"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "kpiRozkladWidget/kpiRozkladWidget.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
-            landmarkName = "Provider"
-            landmarkType = "14">
             <Locations>
                <Location
-                  uuid = "6709255A-8488-4465-B97E-F40254833A5C - 27cad4240dc1228d"
+                  uuid = "5F8E8159-69C4-49EE-87E0-E1237DB92F05 - 63a82b806698d55"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "kpiRozkladWidgetExtension.Provider.init(context: __C.NSManagedObjectContext) -&gt; kpiRozkladWidgetExtension.Provider"
+                  symbolName = "kpiRozkladWidgetExtension.Provider.timeline(with: WidgetKit.TimelineProviderContext, completion: (WidgetKit.Timeline&lt;kpiRozkladWidgetExtension.SimpleEntry&gt;) -&gt; ()) -&gt; ()"
                   moduleName = "kpiRozkladWidgetExtension"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/denisdanilyuk/Documents/_myOwnProjects/kpiRozkladSwiftUI/kpiRozkladWidget/kpiRozkladWidget.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "33"
-                  endingLineNumber = "33"
-                  offsetFromSymbolStart = "428">
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "1296">
                </Location>
                <Location
-                  uuid = "6709255A-8488-4465-B97E-F40254833A5C - b06f9538dc527b37"
+                  uuid = "5F8E8159-69C4-49EE-87E0-E1237DB92F05 - 7acbd5332c48f284"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "kpiRozkladWidgetExtension.Provider.lessonsCoreData.getter : SwiftUI.FetchedResults&lt;kpiRozkladWidgetExtension.LessonData&gt;"
+                  symbolName = "closure #2 (kpiRozkladWidgetExtension.Lesson) -&gt; Swift.Bool in kpiRozkladWidgetExtension.Provider.timeline(with: WidgetKit.TimelineProviderContext, completion: (WidgetKit.Timeline&lt;kpiRozkladWidgetExtension.SimpleEntry&gt;) -&gt; ()) -&gt; ()"
                   moduleName = "kpiRozkladWidgetExtension"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/denisdanilyuk/Documents/_myOwnProjects/kpiRozkladSwiftUI/kpiRozkladWidget/kpiRozkladWidget.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "33"
-                  endingLineNumber = "33"
-                  offsetFromSymbolStart = "320">
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "36">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -343,79 +295,81 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "AA1FF14F-23C6-4330-8081-AC45EBE4CD74"
+            uuid = "6A32A7AE-8C3C-458E-89B6-019DC8347F51"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "kpiRozkladWidget/kpiRozkladWidget.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "121"
-            endingLineNumber = "121"
-            landmarkName = "persistentContainer"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
+            landmarkName = "getNextTwoLessons(lessons:dayNumberFromCurrentDate:currentWeekFromTodayDate:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "72046199-E17F-4861-9A3F-1DE58E5BA07F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "kpiRozkladWidget/kpiRozkladWidget.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "151"
+            endingLineNumber = "151"
+            landmarkName = "getTimeAndDayNumAndWeekOfYear()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "329A2791-8521-47AF-A530-CCE5B3D32371"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "kpiRozkladWidget/kpiRozkladWidget.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "timeline(with:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3C774753-580B-4DEE-B650-323744568C65"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "kpiRozkladWidget/kpiRozkladWidget.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "167"
+            endingLineNumber = "167"
+            landmarkName = "body"
             landmarkType = "24">
-            <Locations>
-               <Location
-                  uuid = "AA1FF14F-23C6-4330-8081-AC45EBE4CD74 - 7253c1d2b713fe4a"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "kpiRozkladWidgetExtension.Wrapper.persistentContainer.getter : __C.NSPersistentContainer"
-                  moduleName = "kpiRozkladWidgetExtension"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/denisdanilyuk/Documents/_myOwnProjects/kpiRozkladSwiftUI/kpiRozkladWidget/kpiRozkladWidget.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "121"
-                  endingLineNumber = "121"
-                  offsetFromSymbolStart = "80">
-               </Location>
-               <Location
-                  uuid = "AA1FF14F-23C6-4330-8081-AC45EBE4CD74 - 501f372f16f05117"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "kpiRozkladWidgetExtension.Wrapper.init() -&gt; kpiRozkladWidgetExtension.Wrapper"
-                  moduleName = "kpiRozkladWidgetExtension"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/denisdanilyuk/Documents/_myOwnProjects/kpiRozkladSwiftUI/kpiRozkladWidget/kpiRozkladWidget.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "121"
-                  endingLineNumber = "121"
-                  offsetFromSymbolStart = "24">
-               </Location>
-               <Location
-                  uuid = "AA1FF14F-23C6-4330-8081-AC45EBE4CD74 - 1d9192e32ab45aa8"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; __C.NSPersistentContainer in kpiRozkladWidgetExtension.Wrapper.persistentContainer.getter : __C.NSPersistentContainer"
-                  moduleName = "kpiRozkladWidgetExtension"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/denisdanilyuk/Documents/_myOwnProjects/kpiRozkladSwiftUI/kpiRozkladWidget/kpiRozkladWidget.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "123"
-                  endingLineNumber = "123"
-                  offsetFromSymbolStart = "24">
-               </Location>
-               <Location
-                  uuid = "AA1FF14F-23C6-4330-8081-AC45EBE4CD74 - 9219418e902c6a7e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "kpiRozkladWidgetExtension.Wrapper.persistentContainer.setter : __C.NSPersistentContainer"
-                  moduleName = "kpiRozkladWidgetExtension"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/denisdanilyuk/Documents/_myOwnProjects/kpiRozkladSwiftUI/kpiRozkladWidget/kpiRozkladWidget.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "121"
-                  endingLineNumber = "121"
-                  offsetFromSymbolStart = "68">
-               </Location>
-            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A6066A8B-8750-4548-AF4D-2ABD6E3D6F92"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "kpiRozkladWidget/kpiRozkladWidget.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "185"
+            endingLineNumber = "185"
+            landmarkName = "body"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

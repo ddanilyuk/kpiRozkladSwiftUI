@@ -58,7 +58,7 @@ struct LessonsList: View {
                 lessonsFromCoreData.append(lessonData.wrappedLesson)
             }
             normalLessons = makeLessonsShedule(lessons: lessonsFromCoreData)
-            Lesson.defaultArratOfLesson = lessonsFromCoreData
+//            Lesson.defaultArratOfLesson = lessonsFromCoreData
         }
 //        .onAppear {
 //            getGroups(complition: { lessons in

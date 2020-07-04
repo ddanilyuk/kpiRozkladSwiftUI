@@ -81,10 +81,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
          error conditions that could cause the creation of the store to fail.
         */
 //        let container = NSPersistentContainer(name: "kpiRozkladData")
-        let container = NSCustomPersistentContainer(name: "kpiRozkladData")
+//        let container = NSCustomPersistentContainer(name: "kpiRozkladData")
 //        container.polis
         
-        
+        let container = NSPersistentContainer(name: "kpiRozkladData")
+        let storeURL = URL.storeURL(for: "group.ddanilyuk.kpiRozkladSwiftUI", databaseName: "LessonsData")
+        let storeDescription = NSPersistentStoreDescription(url: storeURL)
+        container.persistentStoreDescriptions = [storeDescription]
 ////        let persistentContainer = NSPersistentContainer(name: "Collect")
 //        let storeURL = URL.storeURL(for: "group.ddanilyuk.kpiRozkladSwiftUI", databaseName: "Lessons")
 //        let storeDescription = NSPersistentStoreDescription(url: storeURL)
