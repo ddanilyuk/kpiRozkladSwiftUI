@@ -14,8 +14,10 @@ func getGroups(complition: @escaping ([Lesson]) -> ()) {
     let task = URLSession.shared.dataTask(with: url) {(data, response, error) in
         guard let data = data else { return }
         let decoder = JSONDecoder()
-
         do {
+            if let JSONString = String(data: data, encoding: String.Encoding.utf8) {
+               print(JSONString)
+            }
             guard let serverFULLDATA = try? decoder.decode(WelcomeLessons.self, from: data) else { return }
             complition(serverFULLDATA.data)
         }

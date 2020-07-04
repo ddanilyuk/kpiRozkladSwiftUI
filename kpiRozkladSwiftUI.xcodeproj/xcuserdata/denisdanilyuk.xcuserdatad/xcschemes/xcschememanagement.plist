@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Copy of kpiRozkladSwiftUI.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>0</integer>
+		</dict>
 		<key>kpiRozkladSwiftUI.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
@@ -12,7 +17,30 @@
 		<key>kpiRozkladWidgetExtension.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>2</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>5F831B2924A7AAB3000D811C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5FC5922524A65A2200CBB631</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5FC5923E24A65A2300CBB631</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5FC5924924A65A2300CBB631</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

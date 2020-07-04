@@ -9,7 +9,7 @@
 import UIKit
 
 
-enum LessonType: String, Codable, Hashable {
+public enum LessonType: String, Codable, Hashable {
     case empty = ""
     case лаб = "Лаб"
     case лек1 = "Лек"
