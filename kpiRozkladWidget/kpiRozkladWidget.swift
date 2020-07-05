@@ -18,17 +18,51 @@ struct Provider: TimelineProvider {
         self.managedObjectContext = context
     }
     
-    typealias Entry = SimpleEntry
+    typealias Entry = LessonsEntry
 
-    func snapshot(with context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry = SimpleEntry(date: Date(), lessons: Lesson.defaultArratOfLesson)
+    func snapshot(with context: Context, completion: @escaping (Entry) -> ()) {
+        let entry = LessonsEntry(date: Date(), lessons: Lesson.defaultArratOfLesson)
+//        let (dayNumberFromCurrentDate, currentWeekFromTodayDate) = getTimeAndDayNumAndWeekOfYear()
+//        let arrayWithLessonsToShow = getArrayWithNextTwoLessons(dayNumberFromCurrentDate: dayNumberFromCurrentDate, currentWeekFromTodayDate: currentWeekFromTodayDate)
+//        let entry = LessonsEntry(date: Date(), lessons: arrayWithLessonsToShow)
+        
         completion(entry)
     }
     
-    
     func timeline(with context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
         
-        guard let lessonsCoreData = try? managedObjectContext.fetch(NSFetchRequest<NSFetchRequestResult>(entityName: "LessonData")) as? [LessonData] else { return }
+        let (dayNumberFromCurrentDate, currentWeekFromTodayDate) = getTimeAndDayNumAndWeekOfYear()
+
+        let arrayWithLessonsToShow = getArrayWithNextTwoLessons(dayNumberFromCurrentDate: dayNumberFromCurrentDate, currentWeekFromTodayDate: currentWeekFromTodayDate)
+        
+        // Entries with array.count == 2
+        let entries = [LessonsEntry(date: Date(), lessons: arrayWithLessonsToShow)]
+        
+        // Update timeline options
+        var dateToUpdate = Date()
+        if arrayWithLessonsToShow[0].dayNumber == dayNumberFromCurrentDate {
+            let lessonDateStartAndEnd = getDate(lesson: arrayWithLessonsToShow[0])
+            
+            if dateToUpdate < lessonDateStartAndEnd.dateStart {
+                dateToUpdate = lessonDateStartAndEnd.dateStart
+            } else {
+                dateToUpdate = lessonDateStartAndEnd.dateEnd
+            }
+        } else {
+            dateToUpdate = Date.tomorrow
+        }
+
+        
+        print("updated TIMELINE", Date())
+        print("need to update:", dateToUpdate)
+        
+        let timeline = Timeline(entries: entries, policy: .after(dateToUpdate))
+        completion(timeline)
+    }
+    
+    
+    func getArrayWithNextTwoLessons(dayNumberFromCurrentDate: Int, currentWeekFromTodayDate: WeekType) -> [Lesson] {
+        guard let lessonsCoreData = try? managedObjectContext.fetch(NSFetchRequest<NSFetchRequestResult>(entityName: "LessonData")) as? [LessonData] else { return Lesson.defaultArratOfLesson }
         
         var lessonsFromCoreData: [Lesson] = []
         
@@ -37,65 +71,29 @@ struct Provider: TimelineProvider {
         }))
         
         let (dayNumberFromCurrentDate, currentWeekFromTodayDate) = getTimeAndDayNumAndWeekOfYear()
-        
-        
-        let (firstNextLessonID, secondNextLessonID) = getNextTwoLessons(lessons: lessonsFromCoreData, dayNumberFromCurrentDate: dayNumberFromCurrentDate, currentWeekFromTodayDate: currentWeekFromTodayDate)
+        let (firstNextLessonID, secondNextLessonID) = getNextTwoLessonsID(lessons: lessonsFromCoreData, dayNumberFromCurrentDate: dayNumberFromCurrentDate, currentWeekFromTodayDate: currentWeekFromTodayDate)
         
         var arrayWithLessonsToShow: [Lesson] = []
-        
         if let firstLesson = lessonsFromCoreData.first(where: { return $0.id == firstNextLessonID }),
            let secondLesson = lessonsFromCoreData.first(where: { return $0.id == secondNextLessonID }) {
             arrayWithLessonsToShow = [firstLesson, secondLesson]
         }
-//
-//        let todayLessons = lessonsFromCoreData.filter { lesson in
-//            return lesson.lessonWeek == currentWeekFromTodayDate && lesson.dayNumber == dayNumberFromCurrentDate
-//        }
-//
-//        let lastLessonInDayOptional: Lesson? = lessonsFromCoreData.first { lesson -> Bool in
-//            return lesson.id == todayLessons.last?.id
-//        }
-//
-//        var index: Int = 0
-//        if let lastLessonInDay = lastLessonInDayOptional {
-//            index = lessonsFromCoreData.firstIndex(of: lastLessonInDay) ?? 0
-//        }
-//
-//
-//
-//        print(todayLessons.count)
-        
-        let entries = [SimpleEntry(date: Date(), lessons: arrayWithLessonsToShow)]
-        
-        let date = arrayWithLessonsToShow[0].dayNumber == dayNumberFromCurrentDate ? getDate(lesson: arrayWithLessonsToShow[0]).dateEnd : Date.tomorrow
-        
-        let timeline = Timeline(entries: entries, policy: .after(date))
-        completion(timeline)
+        return arrayWithLessonsToShow
     }
     
     
-    func getNextTwoLessons(lessons: [Lesson], dayNumberFromCurrentDate: Int, currentWeekFromTodayDate: WeekType) -> (firstNextLessonID: Int, secondNextLessonID: Int) {
+    func getNextTwoLessonsID(lessons: [Lesson], dayNumberFromCurrentDate: Int, currentWeekFromTodayDate: WeekType) -> (firstNextLessonID: Int, secondNextLessonID: Int) {
         
         // Init values
         var firstNextLessonID: Int = 0
         var secondNextLessonID: Int = 0
 
+        // Current date
         let date = Date()
         
         for lessonIndex in 0..<lessons.count {
             let lesson = lessons[lessonIndex]
             let (currentLessonsDateStart, currentLessonsDateEnd) = getDate(lesson: lesson)
-//            
-//            print("---------------")
-//            print(lesson)
-//            print("date", date)
-//            print("currentLessonsDateStart", currentLessonsDateStart)
-//            print("currentLessonsDateEnd", currentLessonsDateEnd)
-//            print("currentLessonsDateStart < date", currentLessonsDateStart < date)
-//            print("(currentLessonsDateStart > date && currentLessonsDateEnd < date))", (currentLessonsDateStart > date && currentLessonsDateEnd < date))
-//            print("full", (currentLessonsDateStart < date || (currentLessonsDateStart > date && currentLessonsDateEnd < date)) )
-
-
             if (currentLessonsDateStart > date || (currentLessonsDateStart < date && currentLessonsDateEnd > date)) && lesson.lessonWeek == currentWeekFromTodayDate && lesson.dayNumber == dayNumberFromCurrentDate {
                 firstNextLessonID = lesson.id
                 
@@ -131,15 +129,10 @@ struct Provider: TimelineProvider {
         return (firstNextLessonID: firstNextLessonID, secondNextLessonID: secondNextLessonID)
             
     }
-    
-    
-    
-    
-    
 }
 
 
-struct SimpleEntry: TimelineEntry {
+struct LessonsEntry: TimelineEntry {
     public let date: Date
     public let lessons: [Lesson]
 
@@ -179,7 +172,6 @@ struct kpiRozkladWidget: Widget {
     
     var persistentContainer: NSPersistentContainer = {
 //        let container = NSCustomPersistentContainer(name: "kpiRozkladData")
-
         let container = NSPersistentContainer(name: "kpiRozkladData")
         let storeURL = URL.storeURL(for: "group.ddanilyuk.kpiRozkladSwiftUI", databaseName: "LessonsData")
         let storeDescription = NSPersistentStoreDescription(url: storeURL)
@@ -205,23 +197,6 @@ struct kpiRozkladWidget: Widget {
         }
     }
 }
-
-//var wrapper = Wrapper()
-//
-//struct Wrapper {
-//    lazy var persistentContainer: NSPersistentContainer = {
-//
-//        let container = NSCustomPersistentContainer(name: "kpiRozkladData")
-//
-//
-//        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
-//            if let error = error as NSError? {
-//                fatalError("Unresolved error \(error), \(error.userInfo)")
-//            }
-//        })
-//        return container
-//    }()
-//}
 
 struct kpiRozkladWidget_Previews: PreviewProvider {
     static var previews: some View {
