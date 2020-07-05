@@ -111,7 +111,7 @@ struct TimeView: View {
             }
         }
         
-        return (text: Text("через"), color: Color(UIColor.label))
+        return (text: Text("завтра"), color: Color.red)
         
     }
 }

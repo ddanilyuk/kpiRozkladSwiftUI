@@ -66,8 +66,10 @@ struct Provider: TimelineProvider {
 //        print(todayLessons.count)
         
         let entries = [SimpleEntry(date: Date(), lessons: arrayWithLessonsToShow)]
-
-        let timeline = Timeline(entries: entries, policy: .never)
+        
+        let date = arrayWithLessonsToShow[0].dayNumber == dayNumberFromCurrentDate ? getDate(lesson: arrayWithLessonsToShow[0]).dateEnd : Date.tomorrow
+        
+        let timeline = Timeline(entries: entries, policy: .after(date))
         completion(timeline)
     }
     

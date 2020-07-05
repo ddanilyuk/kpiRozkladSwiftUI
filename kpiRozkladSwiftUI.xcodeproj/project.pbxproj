@@ -82,6 +82,8 @@
 		5FC592BD24A7336C00CBB631 /* LessonsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC592BC24A7336C00CBB631 /* LessonsList.swift */; };
 		5FDB995124A8C2A5002E33EA /* WeekType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE6522424A8AA2F0040B12E /* WeekType.swift */; };
 		5FE6522524A8AA2F0040B12E /* WeekType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE6522424A8AA2F0040B12E /* WeekType.swift */; };
+		5FE72BB724B1E81800D2CFC4 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE72BB624B1E81800D2CFC4 /* Date+Extensions.swift */; };
+		5FE72BB824B1E84F00D2CFC4 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE72BB624B1E81800D2CFC4 /* Date+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -178,6 +180,7 @@
 		5FC592BC24A7336C00CBB631 /* LessonsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsList.swift; sourceTree = "<group>"; };
 		5FDA7ACB24A901C8008C1572 /* kpiRozkladWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = kpiRozkladWidget.entitlements; sourceTree = "<group>"; };
 		5FE6522424A8AA2F0040B12E /* WeekType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekType.swift; sourceTree = "<group>"; };
+		5FE72BB624B1E81800D2CFC4 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -366,6 +369,7 @@
 				5FC592B824A695C600CBB631 /* String+Extensions.swift */,
 				5FBFA1CE24A8856E00FFB7C3 /* URL+Extensions.swift */,
 				5FBFA1D124A8874B00FFB7C3 /* NSCustomPersistentContainer.swift */,
+				5FE72BB624B1E81800D2CFC4 /* Date+Extensions.swift */,
 				5FC5923724A65A2300CBB631 /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
@@ -541,6 +545,7 @@
 				5F6959CA24A7C673008B70D6 /* String+Extensions.swift in Sources */,
 				5FBFA1D324A8877400FFB7C3 /* NSCustomPersistentContainer.swift in Sources */,
 				5FBFA1CA24A7D6C200FFB7C3 /* LessonsView.swift in Sources */,
+				5FE72BB824B1E84F00D2CFC4 /* Date+Extensions.swift in Sources */,
 				5F6959C024A7C407008B70D6 /* Teacher.swift in Sources */,
 				5FBFA1CB24A7D6C700FFB7C3 /* LessonsList.swift in Sources */,
 				5FAEA58424B0C71A000E4CD6 /* RoomsData+CoreDataClass.swift in Sources */,
@@ -599,6 +604,7 @@
 				5FBFA1CF24A8856E00FFB7C3 /* URL+Extensions.swift in Sources */,
 				5FC592AB24A65FAE00CBB631 /* ErrorMessage.swift in Sources */,
 				5F786AD924A8998E0036DEC3 /* RoomsData+CoreDataProperties.swift in Sources */,
+				5FE72BB724B1E81800D2CFC4 /* Date+Extensions.swift in Sources */,
 				5FC592B924A695C600CBB631 /* String+Extensions.swift in Sources */,
 				5F831B4124A7AC70000D811C /* WidgetView.swift in Sources */,
 				5FC592AF24A65FAE00CBB631 /* DayName.swift in Sources */,

@@ -21,9 +21,9 @@ struct WidgetView: View {
         VStack(alignment: .leading, spacing: 0) {
             Text("ІВ-82")
                 .font(.headline)
-                .padding(.leading, 20)
-                .padding(.top, 4)
-                .padding(.bottom, 4)
+                .padding(.leading, 30)
+                .padding(.top, 8)
+                .padding(.bottom, 2)
                 .foregroundColor(.blue)
 
             ZStack {
