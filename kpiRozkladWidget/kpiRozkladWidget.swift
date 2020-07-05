@@ -83,15 +83,15 @@ struct Provider: TimelineProvider {
         for lessonIndex in 0..<lessons.count {
             let lesson = lessons[lessonIndex]
             let (currentLessonsDateStart, currentLessonsDateEnd) = getDate(lesson: lesson)
-            
-            print("---------------")
-            print(lesson)
-            print("date", date)
-            print("currentLessonsDateStart", currentLessonsDateStart)
-            print("currentLessonsDateEnd", currentLessonsDateEnd)
-            print("currentLessonsDateStart < date", currentLessonsDateStart < date)
-            print("(currentLessonsDateStart > date && currentLessonsDateEnd < date))", (currentLessonsDateStart > date && currentLessonsDateEnd < date))
-            print("full", (currentLessonsDateStart < date || (currentLessonsDateStart > date && currentLessonsDateEnd < date)) )
+//            
+//            print("---------------")
+//            print(lesson)
+//            print("date", date)
+//            print("currentLessonsDateStart", currentLessonsDateStart)
+//            print("currentLessonsDateEnd", currentLessonsDateEnd)
+//            print("currentLessonsDateStart < date", currentLessonsDateStart < date)
+//            print("(currentLessonsDateStart > date && currentLessonsDateEnd < date))", (currentLessonsDateStart > date && currentLessonsDateEnd < date))
+//            print("full", (currentLessonsDateStart < date || (currentLessonsDateStart > date && currentLessonsDateEnd < date)) )
 
 
             if (currentLessonsDateStart > date || (currentLessonsDateStart < date && currentLessonsDateEnd > date)) && lesson.lessonWeek == currentWeekFromTodayDate && lesson.dayNumber == dayNumberFromCurrentDate {
@@ -132,32 +132,7 @@ struct Provider: TimelineProvider {
     
     
     
-    func getTimeAndDayNumAndWeekOfYear() -> (dayNumberFromCurrentDate: Int, currentWeekFromTodayDate: WeekType){
-        /// Current date from device
-        let date = Date()
-        
-        /// Calendar
-        let calendar = Calendar(identifier: .gregorian)
-        
-        /// Get number of week (in year) and weekday
-        let components = calendar.dateComponents([.weekOfYear, .month, .day, .weekday], from: date)
-
-        var dayNumberFromCurrentDate = (components.weekday ?? 0) - 1
-        var weekOfYear = components.weekOfYear ?? 0
-
-        /// In USA calendar week start on Sunday but in my shedule it start from mounday
-        /// and if today is Sunday, in USA we start new week but for me its wrong and we take away one week and set dayNumber == 7
-        if dayNumberFromCurrentDate == 0 {
-            weekOfYear -= 1
-            dayNumberFromCurrentDate = 7
-        }
-        
-        var currentWeekFromTodayDate: WeekType = .first
-        
-        currentWeekFromTodayDate = weekOfYear % 2 == 0 ? .first : .second
-
-        return (dayNumberFromCurrentDate: dayNumberFromCurrentDate, currentWeekFromTodayDate: currentWeekFromTodayDate)
-    }
+    
     
 }
 

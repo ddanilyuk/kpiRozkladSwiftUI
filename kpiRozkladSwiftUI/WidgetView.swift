@@ -19,23 +19,28 @@ struct WidgetView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            Text("Сьогодні")
+            Text("ІВ-82")
                 .font(.headline)
                 .padding(.leading, 20)
                 .padding(.top, 4)
                 .padding(.bottom, 4)
+                .foregroundColor(.blue)
 
             ZStack {
-                Color.purple
+                Color.clear
+//                Color.purple
+
                 LessonRow(lesson: lessons[0])
-                    .foregroundColor(.white)
+                    .foregroundColor(.init(UIColor.label))
+//                    .foregroundColor(.white)
+                    
                     .padding([.leading, .trailing], 4)
                     .frame(height: 60)
             }
             ZStack {
                 Color.clear
                 LessonRow(lesson: lessons[1])
-                    .foregroundColor(.secondary)
+                    .foregroundColor(.init(UIColor.label))
                     .padding([.leading, .trailing], 4)
                     .frame(height: 60)
             }

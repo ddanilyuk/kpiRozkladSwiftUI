@@ -28,3 +28,31 @@ func getDate(lesson: Lesson) -> (dateStart: Date, dateEnd: Date) {
 //        let toStartPair = dateStartInit.timeIntervalSince1970 - dateNow.timeIntervalSince1970
 //        let toEndPair = dateEndInit.timeIntervalSince1970 - dateNow.timeIntervalSince1970
 }
+
+
+func getTimeAndDayNumAndWeekOfYear() -> (dayNumberFromCurrentDate: Int, currentWeekFromTodayDate: WeekType){
+    /// Current date from device
+    let date = Date()
+    
+    /// Calendar
+    let calendar = Calendar(identifier: .gregorian)
+    
+    /// Get number of week (in year) and weekday
+    let components = calendar.dateComponents([.weekOfYear, .month, .day, .weekday], from: date)
+
+    var dayNumberFromCurrentDate = (components.weekday ?? 0) - 1
+    var weekOfYear = components.weekOfYear ?? 0
+
+    /// In USA calendar week start on Sunday but in my shedule it start from mounday
+    /// and if today is Sunday, in USA we start new week but for me its wrong and we take away one week and set dayNumber == 7
+    if dayNumberFromCurrentDate == 0 {
+        weekOfYear -= 1
+        dayNumberFromCurrentDate = 7
+    }
+    
+    var currentWeekFromTodayDate: WeekType = .first
+    
+    currentWeekFromTodayDate = weekOfYear % 2 == 0 ? .first : .second
+
+    return (dayNumberFromCurrentDate: dayNumberFromCurrentDate, currentWeekFromTodayDate: currentWeekFromTodayDate)
+}
